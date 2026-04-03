@@ -1,20 +1,57 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Gourav Chandra - Portfolio
 
-# Run and deploy your AI Studio app
+Welcome to the source code for my professional portfolio. This repository contains a modern, responsive, and highly optimized personal website built to showcase my expertise in Data Analysis, Business Strategy, and Web Development.
 
-This contains everything you need to run your app locally.
+## 🚀 Live Demo
 
-View your app in AI Studio: https://ai.studio/apps/cb85ad83-35ff-45c8-b88c-0239be31b53e
+You can view the live portfolio here: [Your GitHub Pages URL will go here]
 
-## Run Locally
+## 🛠️ Built With
 
-**Prerequisites:**  Node.js
+This portfolio is built using modern web technologies to ensure a fast, accessible, and beautiful user experience:
 
+- **[React](https://reactjs.org/)** - UI Framework
+- **[Vite](https://vitejs.dev/)** - Build Tool & Development Server
+- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework for styling
+- **[Framer Motion](https://www.framer.com/motion/)** - Animation library for smooth, interactive UI transitions
+- **[Lucide React](https://lucide.dev/)** - Beautiful & consistent icon set
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## ✨ Features
+
+- **Fully Responsive:** Looks great on mobile, tablet, and desktop devices.
+- **Dark/Light Mode:** Built-in theme toggler that respects user preferences.
+- **Smooth Animations:** Scroll-triggered animations and interactive hover states.
+- **Performance Optimized:** Fast load times and optimized asset delivery.
+- **Clean Codebase:** Modular components and maintainable structure.
+
+## 💻 Local Development
+
+To run this project locally on your machine:
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/yourusername/your-repo-name.git
+   cd your-repo-name
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+
+4. **Build for production:**
+   ```bash
+   npm run build
+   ```
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+*Designed & Developed by Gourav Chandra.*
