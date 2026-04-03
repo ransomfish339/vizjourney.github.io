@@ -1,0 +1,36 @@
+{
+  "entities": {
+    "contact_submissions": {
+      "title": "Contact Submissions",
+      "description": "Form submissions from the portfolio's contact section.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the person submitting the form."
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "The email address of the person submitting the form."
+        },
+        "message": {
+          "type": "string",
+          "description": "The message content."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The time the submission was received."
+        }
+      },
+      "required": ["name", "email", "message", "createdAt"]
+    }
+  },
+  "firestore": {
+    "contact_submissions": {
+      "schema": "contact_submissions",
+      "description": "A collection of contact form submissions."
+    }
+  }
+}

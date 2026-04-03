@@ -1,0 +1,32 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper function to check if the user is the admin
+    function isAdmin() {
+      return request.auth != null && 
+             request.auth.token.email == "chandra572gourav@proton.me" && 
+             request.auth.token.email_verified == true;
+    }
+
+    // Contact submissions rules
+    match /contact_submissions/{submissionId} {
+      // Anyone can submit a contact form
+      allow create: if isValidSubmission(request.resource.data);
+      
+      // Only the admin can read submissions
+      allow read: if isAdmin();
+      
+      // No updates or deletes allowed for security
+      allow update, delete: if false;
+    }
+
+    // Validation function for contact submissions
+    function isValidSubmission(data) {
+      return data.keys().hasAll(['name', 'email', 'message', 'createdAt']) &&
+             data.name is string && data.name.size() > 0 && data.name.size() < 100 &&
+             data.email is string && data.email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$") &&
+             data.message is string && data.message.size() > 0 && data.message.size() < 5000 &&
+             data.createdAt is timestamp;
+    }
+  }
+}
