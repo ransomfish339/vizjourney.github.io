@@ -5,9 +5,16 @@ import {defineConfig, loadEnv} from 'vite';
 
 export default defineConfig(({mode}) => {
   const env = loadEnv(mode, '.', '');
-  const repoName = process.env.GITHUB_REPOSITORY ? process.env.GITHUB_REPOSITORY.split('/')[1] : '';
+  const githubRepo = process.env.GITHUB_REPOSITORY || '';
+  const [username, repoName] = githubRepo.split('/');
+  
+  // If the repo is exactly <username>.github.io, it's hosted at the root.
+  // Otherwise, it's hosted at /<repo-name>/
+  const isUserSite = repoName === `${username}.github.io`;
+  const basePath = repoName && !isUserSite ? `/${repoName}/` : '/';
+
   return {
-    base: repoName && !repoName.endsWith('.github.io') ? `/${repoName}/` : '/',
+    base: basePath,
     plugins: [react(), tailwindcss()],
     define: {
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
