@@ -8,46 +8,32 @@ You can view the live portfolio here: [Your GitHub Pages URL will go here]
 
 ## 🛠️ Built With
 
-This portfolio is built using modern web technologies to ensure a fast, accessible, and beautiful user experience:
+This portfolio is built using the simplest, most lightweight technologies to ensure it can be hosted anywhere instantly without a build process:
 
-- **[React](https://reactjs.org/)** - UI Framework
-- **[Vite](https://vitejs.dev/)** - Build Tool & Development Server
-- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework for styling
-- **[Framer Motion](https://www.framer.com/motion/)** - Animation library for smooth, interactive UI transitions
-- **[Lucide React](https://lucide.dev/)** - Beautiful & consistent icon set
+- **HTML5** - Semantic structure
+- **Vanilla JavaScript** - For dark mode toggle and scroll animations
+- **[Tailwind CSS (via CDN)](https://tailwindcss.com/)** - Utility-first CSS framework for styling
+- **[Lucide Icons (via CDN)](https://lucide.dev/)** - Beautiful & consistent icon set
 
 ## ✨ Features
 
+- **Zero Build Step:** Just upload `index.html` to any host (like GitHub Pages) and it works instantly.
 - **Fully Responsive:** Looks great on mobile, tablet, and desktop devices.
 - **Dark/Light Mode:** Built-in theme toggler that respects user preferences.
-- **Smooth Animations:** Scroll-triggered animations and interactive hover states.
+- **Smooth Animations:** Scroll-triggered animations using native Intersection Observer API.
 - **Performance Optimized:** Fast load times and optimized asset delivery.
-- **Clean Codebase:** Modular components and maintainable structure.
 
-## 💻 Local Development
+## 💻 Deployment (GitHub Pages)
 
-To run this project locally on your machine:
+To host this on GitHub Pages:
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
-   cd your-repo-name
-   ```
+1. Create a new repository on GitHub (e.g., `yourusername.github.io`).
+2. Upload the `index.html` file to the repository.
+3. Go to your repository **Settings > Pages**.
+4. Under "Build and deployment", set the **Source** to **Deploy from a branch**.
+5. Select the `main` branch and click **Save**.
 
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-3. **Start the development server:**
-   ```bash
-   npm run dev
-   ```
-
-4. **Build for production:**
-   ```bash
-   npm run build
-   ```
+Your website will be live in a few minutes!
 
 ## 📄 License
 

@@ -1,34 +1,356 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- Primary Meta Tags -->
-    <title>Gourav | Business Analyst & Strategy Consultant</title>
-    <meta name="title" content="Gourav | Business Analyst & Strategy Consultant" />
-    <meta name="description" content="Personal portfolio of Gourav, specializing in scaling businesses through data, design, and strategy." />
-    <meta name="keywords" content="Gourav Chandra, Business Analyst, Strategy Consultant, Data Science, Machine Learning, Portfolio, Data Analytics" />
-    <meta name="author" content="Gourav Chandra" />
-    <meta name="robots" content="index, follow" />
-    <meta name="language" content="English" />
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gourav Chandra - Data & Strategy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        gray: {
+                            900: '#111827',
+                            800: '#1f2937',
+                            700: '#374151',
+                            600: '#4b5563',
+                            500: '#6b7280',
+                            400: '#9ca3af',
+                            300: '#d1d5db',
+                            200: '#e5e7eb',
+                            100: '#f3f4f6',
+                            50: '#f9fafb',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .stagger-1 { transition-delay: 100ms; }
+        .stagger-2 { transition-delay: 200ms; }
+        .stagger-3 { transition-delay: 300ms; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+    </style>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-50 transition-colors duration-300">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Gourav | Business Analyst & Strategy Consultant" />
-    <meta property="og:description" content="Personal portfolio of Gourav, specializing in scaling businesses through data, design, and strategy." />
-    <meta property="og:image" content="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop" />
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 font-bold text-xl tracking-tighter">
+                    GC.
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#solutions" class="text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300 transition-colors">Solutions</a>
+                    <a href="#competencies" class="text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300 transition-colors">Competencies</a>
+                    <a href="#process" class="text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300 transition-colors">How I Work</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                        <i data-lucide="moon" class="w-5 h-5 dark:hidden"></i>
+                        <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
+                    </button>
+                    <a href="mailto:chandra572gourav@proton.me" class="hidden md:inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100 transition-colors">
+                        Email Me
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content="Gourav | Business Analyst & Strategy Consultant" />
-    <meta property="twitter:description" content="Personal portfolio of Gourav, specializing in scaling businesses through data, design, and strategy." />
-    <meta property="twitter:image" content="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop" />
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto min-h-screen flex flex-col justify-center">
+        <div class="max-w-3xl fade-in-up">
+            <div class="inline-flex items-center space-x-2 bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full mb-6">
+                <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                <span class="text-xs font-medium uppercase tracking-wider">Hi, I'm Gourav</span>
+            </div>
+            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-tight">
+                Bridging the gap between <span class="text-gray-500 dark:text-gray-400">Data & Strategy.</span>
+            </h1>
+            <p class="text-xl text-gray-600 dark:text-gray-300 mb-10 max-w-2xl leading-relaxed">
+                I help businesses make sense of their data and build practical, scalable solutions that drive real growth. No fluff, just results.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 fade-in-up stagger-1">
+                <a href="#solutions" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100 transition-colors">
+                    Explore Solutions
+                </a>
+                <a href="mailto:chandra572gourav@proton.me" class="inline-flex items-center justify-center px-6 py-3 border border-gray-300 dark:border-gray-700 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 dark:text-gray-200 dark:bg-gray-900 dark:hover:bg-gray-800 transition-colors">
+                    Get in Touch
+                </a>
+            </div>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-8 mt-24 pt-12 border-t border-gray-200 dark:border-gray-800 fade-in-up stagger-2">
+            <div>
+                <div class="text-3xl font-bold mb-1">5+</div>
+                <div class="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wider">Years Experience</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold mb-1">50+</div>
+                <div class="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wider">Projects Delivered</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold mb-1">30+</div>
+                <div class="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wider">Happy Clients</div>
+            </div>
+        </div>
+    </section>
 
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <!-- Real-World Solutions -->
+    <section id="solutions" class="py-24 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-16 fade-in-up">
+                <h2 class="text-3xl font-bold tracking-tight mb-4">Real-World Solutions</h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl">Practical applications of data and strategy that have driven measurable business outcomes.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Solution 1 -->
+                <div class="p-8 rounded-2xl bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 fade-in-up">
+                    <i data-lucide="globe" class="w-8 h-8 mb-6 text-gray-900 dark:text-white"></i>
+                    <h3 class="text-xl font-bold mb-3">Multiregional Pricing Strategy</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6 text-sm leading-relaxed">Developed dynamic pricing models adapted for local markets, maximizing revenue across different geographical regions while maintaining competitive positioning.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 text-xs font-medium bg-white dark:bg-gray-900 rounded-full border border-gray-200 dark:border-gray-700">Strategy</span>
+                        <span class="px-3 py-1 text-xs font-medium bg-white dark:bg-gray-900 rounded-full border border-gray-200 dark:border-gray-700">Data Analysis</span>
+                    </div>
+                </div>
+
+                <!-- Solution 2 -->
+                <div class="p-8 rounded-2xl bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 fade-in-up stagger-1">
+                    <i data-lucide="code" class="w-8 h-8 mb-6 text-gray-900 dark:text-white"></i>
+                    <h3 class="text-xl font-bold mb-3">Production-Ready Web Development</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6 text-sm leading-relaxed">Built scalable, high-performance web applications using modern stacks. Focused on robust architecture, seamless user experience, and maintainable code.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 text-xs font-medium bg-white dark:bg-gray-900 rounded-full border border-gray-200 dark:border-gray-700">Shopware</span>
+                        <span class="px-3 py-1 text-xs font-medium bg-white dark:bg-gray-900 rounded-full border border-gray-200 dark:border-gray-700">HTML/JS/Twig</span>
+                        <span class="px-3 py-1 text-xs font-medium bg-white dark:bg-gray-900 rounded-full border border-gray-200 dark:border-gray-700">SQL</span>
+                    </div>
+                </div>
+
+                <!-- Solution 3 -->
+                <div class="p-8 rounded-2xl bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 fade-in-up stagger-2">
+                    <i data-lucide="bar-chart" class="w-8 h-8 mb-6 text-gray-900 dark:text-white"></i>
+                    <h3 class="text-xl font-bold mb-3">Executive PowerBI Dashboards</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6 text-sm leading-relaxed">Designed and developed high-level interactive dashboards for C-suite executives, translating complex datasets into clear, actionable insights.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 text-xs font-medium bg-white dark:bg-gray-900 rounded-full border border-gray-200 dark:border-gray-700">PowerBI</span>
+                        <span class="px-3 py-1 text-xs font-medium bg-white dark:bg-gray-900 rounded-full border border-gray-200 dark:border-gray-700">Data Viz</span>
+                    </div>
+                </div>
+
+                <!-- Solution 4 -->
+                <div class="p-8 rounded-2xl bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 fade-in-up">
+                    <i data-lucide="calculator" class="w-8 h-8 mb-6 text-gray-900 dark:text-white"></i>
+                    <h3 class="text-xl font-bold mb-3">Automated Cost Analysis System</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6 text-sm leading-relaxed">Implemented automated pipelines for cost tracking and reporting, significantly reducing manual effort and improving financial accuracy.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 text-xs font-medium bg-white dark:bg-gray-900 rounded-full border border-gray-200 dark:border-gray-700">Automation</span>
+                        <span class="px-3 py-1 text-xs font-medium bg-white dark:bg-gray-900 rounded-full border border-gray-200 dark:border-gray-700">Finance</span>
+                    </div>
+                </div>
+
+                <!-- Solution 5 -->
+                <div class="p-8 rounded-2xl bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 fade-in-up stagger-1">
+                    <i data-lucide="trending-up" class="w-8 h-8 mb-6 text-gray-900 dark:text-white"></i>
+                    <h3 class="text-xl font-bold mb-3">End-to-End Pricing</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6 text-sm leading-relaxed">Managed the complete pricing lifecycle from cost analysis to market positioning, ensuring profitability while remaining competitive.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 text-xs font-medium bg-white dark:bg-gray-900 rounded-full border border-gray-200 dark:border-gray-700">Pricing</span>
+                        <span class="px-3 py-1 text-xs font-medium bg-white dark:bg-gray-900 rounded-full border border-gray-200 dark:border-gray-700">Strategy</span>
+                    </div>
+                </div>
+
+                <!-- Solution 6 -->
+                <div class="p-8 rounded-2xl bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 fade-in-up stagger-2">
+                    <i data-lucide="box" class="w-8 h-8 mb-6 text-gray-900 dark:text-white"></i>
+                    <h3 class="text-xl font-bold mb-3">Inventory & Supply Chain</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6 text-sm leading-relaxed">Developed forecasting models to optimize inventory levels, reducing holding costs and preventing stockouts across the supply chain.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 text-xs font-medium bg-white dark:bg-gray-900 rounded-full border border-gray-200 dark:border-gray-700">Forecasting</span>
+                        <span class="px-3 py-1 text-xs font-medium bg-white dark:bg-gray-900 rounded-full border border-gray-200 dark:border-gray-700">Operations</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Competencies -->
+    <section id="competencies" class="py-24 bg-gray-50 dark:bg-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-16 fade-in-up">
+                <h2 class="text-3xl font-bold tracking-tight mb-4">Core Competencies</h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl">The tools and skills I use to solve complex business problems.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Category 1 -->
+                <div class="fade-in-up">
+                    <h3 class="text-lg font-bold mb-6 flex items-center"><i data-lucide="database" class="w-5 h-5 mr-2"></i> Data & Analysis</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center text-gray-600 dark:text-gray-400"><span class="w-1.5 h-1.5 rounded-full bg-gray-400 mr-3"></span> SQL & Database Design</li>
+                        <li class="flex items-center text-gray-600 dark:text-gray-400"><span class="w-1.5 h-1.5 rounded-full bg-gray-400 mr-3"></span> Data Modeling</li>
+                        <li class="flex items-center text-gray-600 dark:text-gray-400"><span class="w-1.5 h-1.5 rounded-full bg-gray-400 mr-3"></span> Statistical Analysis</li>
+                        <li class="flex items-center text-gray-600 dark:text-gray-400"><span class="w-1.5 h-1.5 rounded-full bg-gray-400 mr-3"></span> Financial Modeling</li>
+                    </ul>
+                </div>
+                <!-- Category 2 -->
+                <div class="fade-in-up stagger-1">
+                    <h3 class="text-lg font-bold mb-6 flex items-center"><i data-lucide="layout" class="w-5 h-5 mr-2"></i> Programming & Web</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center text-gray-600 dark:text-gray-400"><span class="w-1.5 h-1.5 rounded-full bg-gray-400 mr-3"></span> HTML / CSS / JavaScript</li>
+                        <li class="flex items-center text-gray-600 dark:text-gray-400"><span class="w-1.5 h-1.5 rounded-full bg-gray-400 mr-3"></span> React & Modern Frameworks</li>
+                        <li class="flex items-center text-gray-600 dark:text-gray-400"><span class="w-1.5 h-1.5 rounded-full bg-gray-400 mr-3"></span> Shopware & E-commerce</li>
+                        <li class="flex items-center text-gray-600 dark:text-gray-400"><span class="w-1.5 h-1.5 rounded-full bg-gray-400 mr-3"></span> Twig & Templating</li>
+                    </ul>
+                </div>
+                <!-- Category 3 -->
+                <div class="fade-in-up stagger-2">
+                    <h3 class="text-lg font-bold mb-6 flex items-center"><i data-lucide="pie-chart" class="w-5 h-5 mr-2"></i> Business Intelligence</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center text-gray-600 dark:text-gray-400"><span class="w-1.5 h-1.5 rounded-full bg-gray-400 mr-3"></span> PowerBI Dashboards</li>
+                        <li class="flex items-center text-gray-600 dark:text-gray-400"><span class="w-1.5 h-1.5 rounded-full bg-gray-400 mr-3"></span> KPI Tracking</li>
+                        <li class="flex items-center text-gray-600 dark:text-gray-400"><span class="w-1.5 h-1.5 rounded-full bg-gray-400 mr-3"></span> Automated Reporting</li>
+                        <li class="flex items-center text-gray-600 dark:text-gray-400"><span class="w-1.5 h-1.5 rounded-full bg-gray-400 mr-3"></span> Data Visualization</li>
+                    </ul>
+                </div>
+                <!-- Category 4 -->
+                <div class="fade-in-up stagger-3">
+                    <h3 class="text-lg font-bold mb-6 flex items-center"><i data-lucide="settings" class="w-5 h-5 mr-2"></i> Tools & Operations</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center text-gray-600 dark:text-gray-400"><span class="w-1.5 h-1.5 rounded-full bg-gray-400 mr-3"></span> Supply Chain Management</li>
+                        <li class="flex items-center text-gray-600 dark:text-gray-400"><span class="w-1.5 h-1.5 rounded-full bg-gray-400 mr-3"></span> Inventory Forecasting</li>
+                        <li class="flex items-center text-gray-600 dark:text-gray-400"><span class="w-1.5 h-1.5 rounded-full bg-gray-400 mr-3"></span> Cost Analysis</li>
+                        <li class="flex items-center text-gray-600 dark:text-gray-400"><span class="w-1.5 h-1.5 rounded-full bg-gray-400 mr-3"></span> Process Automation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How I Work -->
+    <section id="process" class="py-24 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-16 fade-in-up">
+                <h2 class="text-3xl font-bold tracking-tight mb-4">How I Work</h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl">A straightforward, results-oriented approach to solving problems.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="fade-in-up">
+                    <div class="text-4xl font-bold text-gray-200 dark:text-gray-800 mb-4">01</div>
+                    <h3 class="text-xl font-bold mb-2">Discovery</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">Understanding your business goals, current challenges, and what success looks like.</p>
+                </div>
+                <div class="fade-in-up stagger-1">
+                    <div class="text-4xl font-bold text-gray-200 dark:text-gray-800 mb-4">02</div>
+                    <h3 class="text-xl font-bold mb-2">Analysis</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">Diving deep into your data to find the root causes and identify opportunities.</p>
+                </div>
+                <div class="fade-in-up stagger-2">
+                    <div class="text-4xl font-bold text-gray-200 dark:text-gray-800 mb-4">03</div>
+                    <h3 class="text-xl font-bold mb-2">Strategy</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">Developing a practical, actionable plan that aligns with your resources and objectives.</p>
+                </div>
+                <div class="fade-in-up stagger-3">
+                    <div class="text-4xl font-bold text-gray-200 dark:text-gray-800 mb-4">04</div>
+                    <h3 class="text-xl font-bold mb-2">Execution</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">Building the solution, implementing the strategy, and measuring the results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values & CTA -->
+    <section class="py-24 bg-gray-900 text-white dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in-up">
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-6">Have a project in mind? Let's talk about it.</h2>
+            <p class="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">I'm currently available for consulting and freelance opportunities.</p>
+            <a href="mailto:chandra572gourav@proton.me" class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-medium rounded-md text-gray-900 bg-white hover:bg-gray-100 transition-colors">
+                Email Me <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-gray-900 py-12 border-t border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="text-2xl font-bold tracking-tighter mb-4 md:mb-0">GC.</div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">
+                &copy; <span id="year"></span> Gourav Chandra. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Dark Mode Toggle
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        
+        // Check for saved theme preference or system preference
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        themeToggleBtn.addEventListener('click', function() {
+            // Toggle dark class on html element
+            document.documentElement.classList.toggle('dark');
+            
+            // Save preference
+            if (document.documentElement.classList.contains('dark')) {
+                localStorage.setItem('color-theme', 'dark');
+            } else {
+                localStorage.setItem('color-theme', 'light');
+            }
+        });
+
+        // Scroll Animations using Intersection Observer
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Only animate once
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach((element) => {
+            observer.observe(element);
+        });
+    </script>
+</body>
 </html>
-
