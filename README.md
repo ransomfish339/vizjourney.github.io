@@ -19,34 +19,9 @@ This portfolio is built using modern web technologies to provide a fast, respons
 - **Icons:** Lucide React
 - **Build Tool:** Vite
 
-## Getting Started
+## License
 
-To run this project locally:
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/yourusername/portfolio.git
-   cd portfolio
-   ```
-
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-3. **Start the development server:**
-   ```bash
-   npm run dev
-   ```
-
-4. **Build for production:**
-   ```bash
-   npm run build
-   ```
-
-## Deployment
-
-This project is configured to be easily deployed to GitHub Pages or any static hosting service (Vercel, Netlify, Cloudflare Pages). The `vite.config.ts` is already set up to handle base paths for GitHub Pages deployment.
+All rights reserved. This repository is for viewing purposes only. No part of this code may be copied, cloned, reproduced, or distributed.
 
 ## Contact
 
