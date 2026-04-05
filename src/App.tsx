@@ -212,20 +212,20 @@ export default function App() {
           >
             {[
               { icon: Globe, color: "text-indigo-600 dark:text-indigo-400", title: "E-Commerce & Web", items: [
-                { name: "Shopware 6", desc: "Theme customizations & Rule Builder", tags: ["Twig", "Tailwind CSS", "HTML/CSS"] },
-                { name: "Web Development", desc: "Frontend & custom landing pages", tags: ["JavaScript", "APIs", "Marketing Funnels"] }
+                { name: "Shopware 6", desc: "Theme customizations & Rule Builder", accomplishment: "Successfully managed and scaled 20+ live e-commerce product pages across multiple regions.", tags: ["Twig", "Tailwind CSS", "HTML/CSS"] },
+                { name: "Web Development", desc: "Frontend & custom landing pages", accomplishment: "Engineered high-converting promotional landing pages and marketing funnels for global campaigns.", tags: ["JavaScript", "APIs", "Marketing Funnels"] }
               ]},
               { icon: PieChart, color: "text-purple-600 dark:text-purple-400", title: "Data & Analytics", items: [
-                { name: "Business Intelligence", desc: "Executive KPI dashboards", tags: ["Power BI", "DAX", "M Query"] },
-                { name: "Advanced Modeling", desc: "End-to-end pricing models", tags: ["Excel", "Competitor Analysis", "Forecasting"] }
+                { name: "Business Intelligence", desc: "Executive KPI dashboards", accomplishment: "Developed executive-level KPI dashboards tracking day-to-day revenue, costs, and inventory.", tags: ["Power BI", "DAX", "M Query"] },
+                { name: "Advanced Modeling", desc: "End-to-end pricing models", accomplishment: "Built end-to-end dynamic pricing models factoring competitor analysis across global markets.", tags: ["Excel", "Competitor Analysis", "Forecasting"] }
               ]},
               { icon: Database, color: "text-pink-600 dark:text-pink-400", title: "Databases & Backend", items: [
-                { name: "Data Management", desc: "Fetching & structuring data", tags: ["SQL", "MongoDB", "PHP"] },
-                { name: "Automation", desc: "SFTP/FTP & data pipelines", tags: ["Python", "Scripting", "API Integrations"] }
+                { name: "Data Management", desc: "Fetching & structuring data", accomplishment: "Architected robust data pipelines to fetch and structure complex datasets for cross-regional analysis.", tags: ["SQL", "MongoDB", "PHP"] },
+                { name: "Automation", desc: "SFTP/FTP & data pipelines", accomplishment: "Automated critical data transfers and API workflows, eliminating manual operational bottlenecks.", tags: ["Python", "Scripting", "API Integrations"] }
               ]},
               { icon: TrendingUp, color: "text-blue-600 dark:text-blue-400", title: "Global Operations", items: [
-                { name: "Marketplaces", desc: "Multi-regional sales analysis", tags: ["Global Marketplaces", "D2C Webshops", "Omnichannel"] },
-                { name: "Strategy", desc: "Dynamic pricing & inventory", tags: ["Multi-Regional", "Cross-Border", "Global Markets"] }
+                { name: "Marketplaces", desc: "Multi-regional sales analysis", accomplishment: "Optimized sales and return report analysis across diverse omnichannel platforms.", tags: ["Global Marketplaces", "D2C Webshops", "Omnichannel"] },
+                { name: "Strategy", desc: "Dynamic pricing & inventory", accomplishment: "Implemented data-driven inventory forecasting and pricing strategies for multi-regional markets.", tags: ["Multi-Regional", "Cross-Border", "Global Markets"] }
               ]}
             ].map((category, idx) => (
               <motion.div key={idx} variants={fadeInUp} className="p-8 rounded-3xl bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all group">
@@ -237,7 +237,10 @@ export default function App() {
                   {category.items.map((item, i) => (
                     <li key={i}>
                       <div className="font-bold text-gray-900 dark:text-white mb-1">{item.name}</div>
-                      <div className="text-sm text-gray-500 dark:text-gray-400 mb-2">{item.desc}</div>
+                      <div className="text-sm text-gray-500 dark:text-gray-400 mb-3">{item.desc}</div>
+                      <div className="text-xs text-gray-600 dark:text-gray-300 mb-3 pl-3 border-l-2 border-indigo-400 dark:border-indigo-500 leading-relaxed">
+                        {item.accomplishment}
+                      </div>
                       <div className="flex flex-wrap gap-2">
                         {item.tags.map((tag, t) => (
                           <span key={t} className="text-[10px] px-2 py-1 bg-gray-200 dark:bg-gray-800 rounded-md text-gray-600 dark:text-gray-300 font-medium">{tag}</span>
