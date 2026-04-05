@@ -56,7 +56,7 @@ export default function App() {
               animate={{ opacity: 1, y: 0 }}
               className="hidden md:flex space-x-8"
             >
-              <a href="#expertise" className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Competencies</a>
+              <a href="#expertise" className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Tech Stack</a>
               <a href="#process" className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Process</a>
               <a href="#consulting" className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Consulting</a>
             </motion.div>
@@ -100,7 +100,7 @@ export default function App() {
             >
               <motion.span variants={fadeInUp} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200 dark:border-gray-700 text-xs font-bold uppercase tracking-widest text-gray-800 dark:text-gray-200 mb-8 shadow-sm">
                 <Zap className="w-3.5 h-3.5 text-indigo-500" />
-                Hi, I'm Gourav
+                Gourav Chandra
               </motion.span>
               <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-[1.1] text-gray-900 dark:text-white">
                 Bridging the gap between <br />
@@ -109,7 +109,7 @@ export default function App() {
                 </span>
               </motion.h1>
               <motion.p variants={fadeInUp} className="max-w-xl text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                I help businesses make sense of their data and build practical, scalable solutions that drive real growth. No fluff, just results.
+                Transforming complex data into actionable strategies and scalable e-commerce solutions. Driving measurable growth through technical architecture and business intelligence.
               </motion.p>
               <motion.div variants={fadeInUp} className="flex items-center gap-3 mb-10 text-indigo-600 dark:text-indigo-400 font-medium italic text-sm">
                 <span className="w-8 h-px bg-indigo-200 dark:bg-indigo-800"></span>
@@ -187,7 +187,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* Core Competencies */}
+      {/* Tech Stack */}
       <section id="expertise" className="py-24 px-6 bg-white dark:bg-gray-950 transition-colors">
         <div className="max-w-7xl mx-auto">
           <motion.div 
@@ -197,9 +197,9 @@ export default function App() {
             variants={fadeInUp}
             className="mb-20 text-center"
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white tracking-tight">Core Competencies.</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white tracking-tight">Tech Stack.</h2>
             <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto text-lg">
-              The tools and technologies I use to turn raw data into actionable business strategies.
+              The modern tools and technologies powering scalable web applications and data-driven solutions.
             </p>
           </motion.div>
           
@@ -211,21 +211,21 @@ export default function App() {
             className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
           >
             {[
-              { icon: Database, color: "text-indigo-600 dark:text-indigo-400", title: "Data & Analysis", items: [
-                { name: "SQL", desc: "Extracting and managing data", tags: ["PostgreSQL", "MySQL"] },
-                { name: "Excel", desc: "Advanced modeling & macros", tags: ["VBA", "Pivot Tables"] }
+              { icon: Globe, color: "text-indigo-600 dark:text-indigo-400", title: "E-Commerce & Web", items: [
+                { name: "Shopware 6", desc: "Theme customizations & Rule Builder", tags: ["Twig", "Tailwind CSS", "HTML/CSS"] },
+                { name: "Web Development", desc: "Frontend & custom landing pages", tags: ["JavaScript", "APIs", "Marketing Funnels"] }
               ]},
-              { icon: Code2, color: "text-purple-600 dark:text-purple-400", title: "Programming & Web", items: [
-                { name: "Python", desc: "Automation & Data Science", tags: ["Pandas", "Scikit-Learn"] },
-                { name: "JavaScript", desc: "Building web applications", tags: ["React", "Node.js"] }
+              { icon: PieChart, color: "text-purple-600 dark:text-purple-400", title: "Data & Analytics", items: [
+                { name: "Business Intelligence", desc: "Executive KPI dashboards", tags: ["Power BI", "DAX", "M Query"] },
+                { name: "Advanced Modeling", desc: "End-to-end pricing models", tags: ["Excel", "Competitor Analysis", "Forecasting"] }
               ]},
-              { icon: PieChart, color: "text-pink-600 dark:text-pink-400", title: "Business Intelligence", items: [
-                { name: "Power BI", desc: "Interactive dashboards", tags: ["Visualization"] },
-                { name: "Strategy", desc: "Data-driven growth plans", tags: ["Consulting"] }
+              { icon: Database, color: "text-pink-600 dark:text-pink-400", title: "Databases & Backend", items: [
+                { name: "Data Management", desc: "Fetching & structuring data", tags: ["SQL", "MongoDB", "PHP"] },
+                { name: "Automation", desc: "SFTP/FTP & data pipelines", tags: ["Python", "Scripting", "API Integrations"] }
               ]},
-              { icon: Settings, color: "text-blue-600 dark:text-blue-400", title: "Tools & Operations", items: [
-                { name: "Git", desc: "Version control & collaboration", tags: ["GitHub"] },
-                { name: "Cloud", desc: "Infrastructure & deployment", tags: ["AWS", "Docker"] }
+              { icon: TrendingUp, color: "text-blue-600 dark:text-blue-400", title: "Global Operations", items: [
+                { name: "Marketplaces", desc: "Multi-regional sales analysis", tags: ["Global Marketplaces", "D2C Webshops", "Omnichannel"] },
+                { name: "Strategy", desc: "Dynamic pricing & inventory", tags: ["Multi-Regional", "Cross-Border", "Global Markets"] }
               ]}
             ].map((category, idx) => (
               <motion.div key={idx} variants={fadeInUp} className="p-8 rounded-3xl bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all group">
@@ -262,9 +262,9 @@ export default function App() {
             variants={fadeInUp}
             className="mb-20"
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white tracking-tight">How I Work.</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white tracking-tight">Methodology.</h2>
             <p className="text-gray-500 dark:text-gray-400 max-w-2xl text-lg">
-              A simple, proven approach to solving complex business problems.
+              A proven framework for solving complex business challenges.
             </p>
           </motion.div>
           
@@ -278,10 +278,10 @@ export default function App() {
               className="grid md:grid-cols-4 gap-12 relative z-10"
             >
               {[
-                { icon: Database, color: "text-indigo-600", title: "Discovery", desc: "Understanding your business goals, current challenges, and the data you have available." },
-                { icon: TrendingUp, color: "text-purple-600", title: "Analysis", desc: "Digging into the numbers to find patterns, inefficiencies, and opportunities for growth." },
-                { icon: PieChart, color: "text-pink-600", title: "Strategy", desc: "Building a clear, step-by-step plan based on hard data rather than guesswork." },
-                { icon: Rocket, color: "text-orange-600", title: "Execution", desc: "Putting the plan into action, monitoring the results, and adjusting as needed." }
+                { icon: Database, color: "text-indigo-600", title: "Discovery", desc: "Aligning with business goals, identifying current challenges, and auditing available data infrastructure." },
+                { icon: TrendingUp, color: "text-purple-600", title: "Analysis", desc: "Uncovering patterns, operational inefficiencies, and strategic opportunities for growth." },
+                { icon: PieChart, color: "text-pink-600", title: "Strategy", desc: "Architecting clear, data-backed roadmaps designed for measurable impact." },
+                { icon: Rocket, color: "text-orange-600", title: "Execution", desc: "Deploying solutions, monitoring key performance indicators, and optimizing for continuous improvement." }
               ].map((step, idx) => (
                 <motion.div key={idx} variants={fadeInUp} className="relative">
                   <div className="w-16 h-16 bg-white dark:bg-gray-800 rounded-full border-4 border-gray-50 dark:border-gray-900 shadow-xl flex items-center justify-center mb-6 mx-auto md:mx-0">
@@ -298,51 +298,45 @@ export default function App() {
         </div>
       </section>
 
-      {/* Consulting */}
-      <section id="consulting" className="py-24 px-6 bg-white dark:bg-gray-950 transition-colors">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center">
+      {/* Services */}
+      <section id="services" className="py-24 px-6 bg-white dark:bg-gray-950 transition-colors">
+        <div className="max-w-7xl mx-auto">
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeInUp}
+            className="text-center mb-20"
+          >
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white tracking-tight">Core Capabilities.</h2>
+            <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto text-lg">
+              Delivering specialized expertise across web development, data analytics, and business automation to drive operational excellence.
+            </p>
+          </motion.div>
+
           <motion.div 
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={staggerContainer}
-            className="lg:w-1/2"
+            className="grid md:grid-cols-2 gap-8"
           >
-            <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-bold mb-8 leading-tight text-gray-900 dark:text-white">
-              Consulting for <br />
-              <span className="text-indigo-600 dark:text-indigo-400">Real Growth.</span>
-            </motion.h2>
-            <motion.p variants={fadeInUp} className="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-              I bridge the gap between technical data analysis and everyday business operations. 
-              I don't just hand over a spreadsheet; I help you understand what the numbers mean and what to do next.
-            </motion.p>
-            <motion.div variants={staggerContainer} className="space-y-6">
-              {[
-                { icon: Rocket, color: "text-orange-500", bg: "bg-orange-100 dark:bg-orange-900/30", title: "Sales & Growth", desc: "Finding the bottlenecks in your sales process and fixing them." },
-                { icon: Shield, color: "text-green-500", bg: "bg-green-100 dark:bg-green-900/30", title: "Data-Driven Decisions", desc: "Using your own data to make confident choices, not guesses." },
-                { icon: Globe, color: "text-blue-500", bg: "bg-blue-100 dark:bg-blue-900/30", title: "Digital Strategy", desc: "Building online experiences that actually convert visitors into customers." }
-              ].map((item, idx) => (
-                <motion.div key={idx} variants={fadeInUp} className="flex gap-4">
-                  <div className={`w-12 h-12 rounded-full ${item.bg} flex items-center justify-center flex-shrink-0`}>
-                    <item.icon className={`w-5 h-5 ${item.color}`} />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{item.title}</h4>
-                    <p className="text-gray-600 dark:text-gray-400">{item.desc}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </motion.div>
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-            className="lg:w-1/2 relative"
-          >
-            <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/20 to-purple-500/20 rounded-[40px] blur-3xl"></div>
-            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop" alt="Consulting" className="relative z-10 rounded-[40px] shadow-2xl border-8 border-white dark:border-gray-900" referrerPolicy="no-referrer" />
+            {[
+              { icon: Globe, color: "text-indigo-600 dark:text-indigo-400", bg: "bg-indigo-100 dark:bg-indigo-900/30", title: "E-Commerce & Web Architecture", desc: "Architecting and managing scalable Shopware infrastructures. From designing multi-regional product pages to deploying high-converting landing pages and marketing funnels, ensuring a seamless digital experience." },
+              { icon: TrendingUp, color: "text-green-600 dark:text-green-400", bg: "bg-green-100 dark:bg-green-900/30", title: "Pricing Strategy & Modeling", desc: "Developing dynamic and fixed pricing models for multi-regional global markets. Leveraging competitor analysis and advanced modeling to optimize margins across diverse omnichannel marketplaces and D2C webshops." },
+              { icon: PieChart, color: "text-purple-600 dark:text-purple-400", bg: "bg-purple-100 dark:bg-purple-900/30", title: "Business Intelligence & Dashboards", desc: "Designing executive-level KPI dashboards for comprehensive operational tracking. Enabling real-time visibility into revenue targets, cost analysis, expense tracking, and inventory forecasting." },
+              { icon: Database, color: "text-orange-600 dark:text-orange-400", bg: "bg-orange-100 dark:bg-orange-900/30", title: "Data Automation & Integrations", desc: "Streamlining backend operations through intelligent automation and data integration. Replacing manual workflows with robust Python and SQL pipelines, API integrations, and automated data transfers." }
+            ].map((service, idx) => (
+              <motion.div key={idx} variants={fadeInUp} className="p-8 rounded-3xl bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all flex flex-col sm:flex-row gap-6">
+                <div className={`w-16 h-16 rounded-2xl ${service.bg} flex items-center justify-center flex-shrink-0`}>
+                  <service.icon className={`w-8 h-8 ${service.color}`} />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">{service.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{service.desc}</p>
+                </div>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </section>
@@ -358,9 +352,9 @@ export default function App() {
             className="grid md:grid-cols-3 gap-12"
           >
             {[
-              { title: "Honesty", desc: "I give you the real numbers and straightforward advice, even if it's not what you expected to hear." },
-              { title: "Practicality", desc: "I focus on tools and strategies that actually work in the real world, not just in theory." },
-              { title: "Results", desc: "Everything I do is aimed at one thing: making your business more profitable and efficient." }
+              { title: "Transparency", desc: "Delivering transparent data insights and straightforward strategic advice, ensuring complete clarity on business performance." },
+              { title: "Practicality", desc: "Focusing on implementable tools and strategies that drive tangible results in real-world business environments." },
+              { title: "Impact", desc: "Dedicated to a single objective: maximizing business profitability and operational efficiency." }
             ].map((val, idx) => (
               <motion.div key={idx} variants={fadeInUp} className="text-center md:text-left">
                 <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white flex items-center gap-2 justify-center md:justify-start">
@@ -401,21 +395,21 @@ export default function App() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
             <div className="md:col-span-2">
-              <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white">Ready to get started?</h2>
+              <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white">Ready to scale?</h2>
               <p className="text-gray-500 dark:text-gray-400 mb-8 max-w-sm">
-                I'm currently accepting new projects. If you have a data or business problem you need solved, let's talk.
+                Currently accepting new partnerships. For strategic data solutions and e-commerce architecture, let's start a conversation.
               </p>
               <a href="mailto:chandra572gourav@proton.me" className="text-xl font-bold text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors flex items-center gap-2 group">
-                Send me an email
+                Send an email
                 <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
             <div>
               <h4 className="font-bold mb-6 uppercase text-xs tracking-widest text-gray-400 dark:text-gray-500">Navigation</h4>
               <ul className="space-y-4">
-                <li><a href="#expertise" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Core Competencies</a></li>
-                <li><a href="#process" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">How I Work</a></li>
-                <li><a href="#consulting" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Consulting</a></li>
+                <li><a href="#expertise" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Tech Stack</a></li>
+                <li><a href="#process" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Methodology</a></li>
+                <li><a href="#services" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Services</a></li>
               </ul>
             </div>
             <div>
