@@ -91,8 +91,8 @@ export default function App() {
                 animate={{ opacity: 1, y: 0 }}
                 className="hidden md:flex space-x-8"
               >
-                <a href="#expertise" className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors">Tech Stack</a>
                 <a href="#process" className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors">Process</a>
+                <a href="#expertise" className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors">Tech Stack</a>
                 <a href="#consulting" className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors">Consulting</a>
               </motion.div>
               <motion.div 
@@ -116,71 +116,117 @@ export default function App() {
         </nav>
 
         {/* Hero Section */}
-        <section className="pt-32 pb-20 px-6 relative min-h-screen flex items-center">
-          <div className="max-w-7xl mx-auto w-full">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <motion.div 
-                variants={staggerContainer}
-                initial="hidden"
-                animate="visible"
-              >
-                <motion.span variants={fadeInUp} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/50 dark:bg-white/5 backdrop-blur-md border border-gray-200 dark:border-white/10 text-xs font-bold uppercase tracking-widest text-gray-600 dark:text-gray-200 mb-8 transition-colors duration-500">
-                  <Zap className="w-3.5 h-3.5 text-indigo-500 dark:text-indigo-400" />
-                  Gourav Chandra
-                </motion.span>
-                <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-[1.1] text-gray-900 dark:text-white drop-shadow-sm dark:drop-shadow-2xl transition-colors duration-500">
-                  Bridging the gap between <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 dark:from-indigo-400 dark:via-purple-400 dark:to-pink-400">
-                    Data & Strategy.
-                  </span>
-                </motion.h1>
-                <motion.p variants={fadeInUp} className="max-w-xl text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-6 leading-relaxed transition-colors duration-500">
-                  Transforming complex data into actionable strategies and scalable e-commerce solutions. Driving measurable growth through technical architecture and business intelligence.
-                </motion.p>
-                <motion.div variants={fadeInUp} className="flex items-center gap-3 mb-10 text-indigo-600 dark:text-indigo-400 font-medium italic text-sm transition-colors duration-500">
-                  <span className="w-8 h-px bg-indigo-300 dark:bg-indigo-800"></span>
-                  "Data is the compass, strategy is the map."
-                </motion.div>
-                
-                <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-center gap-4 mb-12">
-                  <a href="#expertise" className="w-full sm:w-auto bg-black dark:bg-white text-white dark:text-black px-8 py-4 rounded-full font-semibold hover:bg-gray-800 dark:hover:bg-gray-200 transition-all flex items-center justify-center gap-2 group shadow-[0_0_20px_rgba(0,0,0,0.1)] dark:shadow-[0_0_20px_rgba(255,255,255,0.1)]">
-                    Explore Solutions
-                    <ArrowRight className="w-4.5 h-4.5 group-hover:translate-x-1 transition-transform" />
-                  </a>
-                  <a href="mailto:chandra572gourav@proton.me" className="w-full sm:w-auto bg-white/50 dark:bg-white/5 backdrop-blur-md border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white px-8 py-4 rounded-full font-semibold hover:bg-gray-100 dark:hover:bg-white/10 transition-all text-center">
-                    Let's Talk
-                  </a>
-                </motion.div>
+        <section className="pt-32 pb-20 px-6 relative min-h-screen flex items-center justify-center text-center">
+          <div className="max-w-4xl mx-auto w-full">
+            <motion.div 
+              variants={staggerContainer}
+              initial="hidden"
+              animate="visible"
+              className="flex flex-col items-center"
+            >
+              <motion.span variants={fadeInUp} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/50 dark:bg-white/5 backdrop-blur-md border border-gray-200 dark:border-white/10 text-xs font-bold uppercase tracking-widest text-gray-600 dark:text-gray-200 mb-8 transition-colors duration-500">
+                <Zap className="w-3.5 h-3.5 text-indigo-500 dark:text-indigo-400" />
+                Gourav Chandra
+              </motion.span>
+              <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-[1.1] text-gray-900 dark:text-white drop-shadow-sm dark:drop-shadow-2xl transition-colors duration-500">
+                Bridging the gap between <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 dark:from-indigo-400 dark:via-purple-400 dark:to-pink-400">
+                  Data & Strategy.
+                </span>
+              </motion.h1>
+              <motion.p variants={fadeInUp} className="max-w-2xl mx-auto text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-6 leading-relaxed transition-colors duration-500">
+                Transforming complex data into actionable strategies and scalable e-commerce solutions. Driving measurable growth through technical architecture and business intelligence.
+              </motion.p>
+              <motion.div variants={fadeInUp} className="flex items-center justify-center gap-3 mb-10 text-indigo-600 dark:text-indigo-400 font-medium italic text-sm transition-colors duration-500">
+                <span className="w-8 h-px bg-indigo-300 dark:bg-indigo-800"></span>
+                "Data is the compass, strategy is the map."
+                <span className="w-8 h-px bg-indigo-300 dark:bg-indigo-800"></span>
+              </motion.div>
+              
+              <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+                <a href="#process" className="w-full sm:w-auto bg-black dark:bg-white text-white dark:text-black px-8 py-4 rounded-full font-semibold hover:bg-gray-800 dark:hover:bg-gray-200 transition-all flex items-center justify-center gap-2 group shadow-[0_0_20px_rgba(0,0,0,0.1)] dark:shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+                  Explore Solutions
+                  <ArrowRight className="w-4.5 h-4.5 group-hover:translate-x-1 transition-transform" />
+                </a>
+                <a href="mailto:chandra572gourav@proton.me" className="w-full sm:w-auto bg-white/50 dark:bg-white/5 backdrop-blur-md border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white px-8 py-4 rounded-full font-semibold hover:bg-gray-100 dark:hover:bg-white/10 transition-all text-center">
+                  Let's Talk
+                </a>
+              </motion.div>
 
-                <motion.div variants={fadeInUp} className="grid grid-cols-3 gap-4 border-t border-gray-200 dark:border-white/10 pt-10 transition-colors duration-500">
-                  <div>
-                    <div className="flex items-center gap-2 text-indigo-500 dark:text-indigo-400 mb-1">
-                      <Zap className="w-4 h-4" />
-                      <span className="text-2xl font-bold text-gray-900 dark:text-white tracking-tight">5+</span>
-                    </div>
-                    <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Years Experience</p>
+              <motion.div variants={fadeInUp} className="grid grid-cols-3 gap-8 md:gap-16 border-t border-gray-200 dark:border-white/10 pt-10 transition-colors duration-500">
+                <div className="flex flex-col items-center">
+                  <div className="flex items-center justify-center gap-2 text-indigo-500 dark:text-indigo-400 mb-1">
+                    <Zap className="w-4 h-4" />
+                    <span className="text-2xl font-bold text-gray-900 dark:text-white tracking-tight">5+</span>
                   </div>
-                  <div>
-                    <div className="flex items-center gap-2 text-indigo-500 dark:text-indigo-400 mb-1">
-                      <TrendingUp className="w-4 h-4" />
-                      <span className="text-2xl font-bold text-gray-900 dark:text-white tracking-tight">50+</span>
-                    </div>
-                    <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Projects Delivered</p>
+                  <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider text-center">Years Experience</p>
+                </div>
+                <div className="flex flex-col items-center">
+                  <div className="flex items-center justify-center gap-2 text-indigo-500 dark:text-indigo-400 mb-1">
+                    <TrendingUp className="w-4 h-4" />
+                    <span className="text-2xl font-bold text-gray-900 dark:text-white tracking-tight">50+</span>
                   </div>
-                  <div>
-                    <div className="flex items-center gap-2 text-indigo-500 dark:text-indigo-400 mb-1">
-                      <Database className="w-4 h-4" />
-                      <span className="text-2xl font-bold text-gray-900 dark:text-white tracking-tight">30+</span>
-                    </div>
-                    <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Happy Clients</p>
+                  <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider text-center">Projects Delivered</p>
+                </div>
+                <div className="flex flex-col items-center">
+                  <div className="flex items-center justify-center gap-2 text-indigo-500 dark:text-indigo-400 mb-1">
+                    <Database className="w-4 h-4" />
+                    <span className="text-2xl font-bold text-gray-900 dark:text-white tracking-tight">30+</span>
                   </div>
-                </motion.div>
+                  <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider text-center">Happy Clients</p>
+                </div>
+              </motion.div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* How I Work (Methodology) - Moved up */}
+        <section id="process" className="py-24 px-6 relative">
+          <div className="max-w-7xl mx-auto">
+            <motion.div 
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={fadeInUp}
+              className="mb-20 text-center"
+            >
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white tracking-tight transition-colors duration-500">Methodology.</h2>
+              <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg transition-colors duration-500">
+                A proven framework for solving complex business challenges.
+              </p>
+            </motion.div>
+            
+            <div className="relative">
+              <div className="absolute top-1/2 left-0 w-full h-px bg-gray-200 dark:bg-white/10 -translate-y-1/2 hidden md:block transition-colors duration-500"></div>
+              <motion.div 
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                variants={staggerContainer}
+                className="grid md:grid-cols-4 gap-12 relative z-10"
+              >
+                {[
+                  { icon: Database, color: "text-indigo-500 dark:text-indigo-400", title: "Discovery", desc: "Aligning with business goals, identifying current challenges, and auditing available data infrastructure." },
+                  { icon: TrendingUp, color: "text-purple-500 dark:text-purple-400", title: "Analysis", desc: "Uncovering patterns, operational inefficiencies, and strategic opportunities for growth." },
+                  { icon: PieChart, color: "text-pink-500 dark:text-pink-400", title: "Strategy", desc: "Architecting clear, data-backed roadmaps designed for measurable impact." },
+                  { icon: Rocket, color: "text-orange-500 dark:text-orange-400", title: "Execution", desc: "Deploying solutions, monitoring key performance indicators, and optimizing for continuous improvement." }
+                ].map((step, idx) => (
+                  <motion.div key={idx} variants={fadeInUp} className="relative">
+                    <div className="w-16 h-16 bg-white dark:bg-black/50 backdrop-blur-md rounded-full border border-gray-200 dark:border-white/20 shadow-[0_0_30px_rgba(0,0,0,0.05)] dark:shadow-[0_0_30px_rgba(0,0,0,0.5)] flex items-center justify-center mb-6 mx-auto md:mx-0 transition-colors duration-500">
+                      <step.icon className={`w-6 h-6 ${step.color}`} />
+                    </div>
+                    <h3 className="text-xl font-bold mb-3 text-center md:text-left text-gray-900 dark:text-white transition-colors duration-500">{step.title}</h3>
+                    <p className="text-gray-600 dark:text-gray-400 text-center md:text-left text-sm leading-relaxed transition-colors duration-500">
+                      {step.desc}
+                    </p>
+                  </motion.div>
+                ))}
               </motion.div>
             </div>
           </div>
         </section>
 
-        {/* Tech Stack */}
+        {/* Tech Stack - Moved down */}
         <section id="expertise" className="py-24 px-6 relative">
           <div className="max-w-7xl mx-auto">
             <motion.div 
@@ -245,52 +291,6 @@ export default function App() {
                 </motion.div>
               ))}
             </motion.div>
-          </div>
-        </section>
-
-        {/* How I Work */}
-        <section id="process" className="py-24 px-6 relative">
-          <div className="max-w-7xl mx-auto">
-            <motion.div 
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={fadeInUp}
-              className="mb-20"
-            >
-              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white tracking-tight transition-colors duration-500">Methodology.</h2>
-              <p className="text-gray-600 dark:text-gray-400 max-w-2xl text-lg transition-colors duration-500">
-                A proven framework for solving complex business challenges.
-              </p>
-            </motion.div>
-            
-            <div className="relative">
-              <div className="absolute top-1/2 left-0 w-full h-px bg-gray-200 dark:bg-white/10 -translate-y-1/2 hidden md:block transition-colors duration-500"></div>
-              <motion.div 
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-100px" }}
-                variants={staggerContainer}
-                className="grid md:grid-cols-4 gap-12 relative z-10"
-              >
-                {[
-                  { icon: Database, color: "text-indigo-500 dark:text-indigo-400", title: "Discovery", desc: "Aligning with business goals, identifying current challenges, and auditing available data infrastructure." },
-                  { icon: TrendingUp, color: "text-purple-500 dark:text-purple-400", title: "Analysis", desc: "Uncovering patterns, operational inefficiencies, and strategic opportunities for growth." },
-                  { icon: PieChart, color: "text-pink-500 dark:text-pink-400", title: "Strategy", desc: "Architecting clear, data-backed roadmaps designed for measurable impact." },
-                  { icon: Rocket, color: "text-orange-500 dark:text-orange-400", title: "Execution", desc: "Deploying solutions, monitoring key performance indicators, and optimizing for continuous improvement." }
-                ].map((step, idx) => (
-                  <motion.div key={idx} variants={fadeInUp} className="relative">
-                    <div className="w-16 h-16 bg-white dark:bg-black/50 backdrop-blur-md rounded-full border border-gray-200 dark:border-white/20 shadow-[0_0_30px_rgba(0,0,0,0.05)] dark:shadow-[0_0_30px_rgba(0,0,0,0.5)] flex items-center justify-center mb-6 mx-auto md:mx-0 transition-colors duration-500">
-                      <step.icon className={`w-6 h-6 ${step.color}`} />
-                    </div>
-                    <h3 className="text-xl font-bold mb-3 text-center md:text-left text-gray-900 dark:text-white transition-colors duration-500">{step.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-400 text-center md:text-left text-sm leading-relaxed transition-colors duration-500">
-                      {step.desc}
-                    </p>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </div>
           </div>
         </section>
 
@@ -402,8 +402,8 @@ export default function App() {
               <div>
                 <h4 className="font-bold mb-6 uppercase text-xs tracking-widest text-gray-500">Navigation</h4>
                 <ul className="space-y-4">
-                  <li><a href="#expertise" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">Tech Stack</a></li>
                   <li><a href="#process" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">Methodology</a></li>
+                  <li><a href="#expertise" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">Tech Stack</a></li>
                   <li><a href="#consulting" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">Consulting</a></li>
                 </ul>
               </div>
