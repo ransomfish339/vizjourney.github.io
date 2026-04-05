@@ -298,8 +298,8 @@ export default function App() {
         </div>
       </section>
 
-      {/* Services */}
-      <section id="services" className="py-24 px-6 bg-white dark:bg-gray-950 transition-colors">
+      {/* Consulting */}
+      <section id="consulting" className="py-24 px-6 bg-white dark:bg-gray-950 transition-colors">
         <div className="max-w-7xl mx-auto">
           <motion.div 
             initial="hidden"
@@ -308,9 +308,9 @@ export default function App() {
             variants={fadeInUp}
             className="text-center mb-20"
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white tracking-tight">Core Capabilities.</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white tracking-tight">Consulting & Advisory.</h2>
             <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto text-lg">
-              Delivering specialized expertise across web development, data analytics, and business automation to drive operational excellence.
+              Partnering with organizations to solve complex operational challenges. Delivering specialized expertise across web development, data analytics, and business automation.
             </p>
           </motion.div>
 
@@ -322,10 +322,10 @@ export default function App() {
             className="grid md:grid-cols-2 gap-8"
           >
             {[
-              { icon: Globe, color: "text-indigo-600 dark:text-indigo-400", bg: "bg-indigo-100 dark:bg-indigo-900/30", title: "E-Commerce & Web Architecture", desc: "Architecting and managing scalable Shopware infrastructures. From designing multi-regional product pages to deploying high-converting landing pages and marketing funnels, ensuring a seamless digital experience." },
-              { icon: TrendingUp, color: "text-green-600 dark:text-green-400", bg: "bg-green-100 dark:bg-green-900/30", title: "Pricing Strategy & Modeling", desc: "Developing dynamic and fixed pricing models for multi-regional global markets. Leveraging competitor analysis and advanced modeling to optimize margins across diverse omnichannel marketplaces and D2C webshops." },
-              { icon: PieChart, color: "text-purple-600 dark:text-purple-400", bg: "bg-purple-100 dark:bg-purple-900/30", title: "Business Intelligence & Dashboards", desc: "Designing executive-level KPI dashboards for comprehensive operational tracking. Enabling real-time visibility into revenue targets, cost analysis, expense tracking, and inventory forecasting." },
-              { icon: Database, color: "text-orange-600 dark:text-orange-400", bg: "bg-orange-100 dark:bg-orange-900/30", title: "Data Automation & Integrations", desc: "Streamlining backend operations through intelligent automation and data integration. Replacing manual workflows with robust Python and SQL pipelines, API integrations, and automated data transfers." }
+              { icon: Globe, color: "text-indigo-600 dark:text-indigo-400", bg: "bg-indigo-100 dark:bg-indigo-900/30", title: "E-Commerce Architecture", desc: "Architecting and managing scalable Shopware infrastructures. Deploying high-converting landing pages and marketing funnels to ensure a seamless digital experience." },
+              { icon: TrendingUp, color: "text-green-600 dark:text-green-400", bg: "bg-green-100 dark:bg-green-900/30", title: "Pricing Strategy & Modeling", desc: "Developing dynamic pricing models for multi-regional global markets. Leveraging competitor analysis to optimize margins across diverse omnichannel marketplaces." },
+              { icon: PieChart, color: "text-purple-600 dark:text-purple-400", bg: "bg-purple-100 dark:bg-purple-900/30", title: "Business Intelligence", desc: "Designing executive-level KPI dashboards for comprehensive operational tracking. Enabling real-time visibility into revenue targets and inventory forecasting." },
+              { icon: Database, color: "text-orange-600 dark:text-orange-400", bg: "bg-orange-100 dark:bg-orange-900/30", title: "Data Automation", desc: "Streamlining backend operations through intelligent automation. Replacing manual workflows with robust Python and SQL pipelines and automated data transfers." }
             ].map((service, idx) => (
               <motion.div key={idx} variants={fadeInUp} className="p-8 rounded-3xl bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all flex flex-col sm:flex-row gap-6">
                 <div className={`w-16 h-16 rounded-2xl ${service.bg} flex items-center justify-center flex-shrink-0`}>
@@ -409,7 +409,7 @@ export default function App() {
               <ul className="space-y-4">
                 <li><a href="#expertise" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Tech Stack</a></li>
                 <li><a href="#process" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Methodology</a></li>
-                <li><a href="#services" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Services</a></li>
+                <li><a href="#consulting" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Consulting</a></li>
               </ul>
             </div>
             <div>
