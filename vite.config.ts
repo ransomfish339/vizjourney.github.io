@@ -8,10 +8,9 @@ export default defineConfig(({mode}) => {
   const githubRepo = process.env.GITHUB_REPOSITORY || '';
   const [username, repoName] = githubRepo.split('/');
   
-  // If the repo is exactly <username>.github.io, it's hosted at the root.
-  // Otherwise, it's hosted at /<repo-name>/
-  const isUserSite = repoName === `${username}.github.io`;
-  const basePath = repoName && !isUserSite ? `/${repoName}/` : '/';
+  // For custom domains, the base path must be '/'
+  // We'll default to '/' to ensure compatibility with custom domains like vizjourney.com
+  const basePath = '/';
 
   return {
     base: basePath,
