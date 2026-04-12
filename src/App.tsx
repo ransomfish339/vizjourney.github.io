@@ -126,7 +126,9 @@ export default function App() {
                 animate={{ opacity: 1, x: 0 }}
                 className="flex-shrink-0 font-bold text-2xl tracking-tighter"
               >
-                GC<span className="text-indigo-500">.</span>
+                <a href="#" className="hover:opacity-80 transition-opacity">
+                  GC<span className="text-indigo-500">.</span>
+                </a>
               </motion.div>
               <motion.div 
                 initial={{ opacity: 0, y: -10 }}
