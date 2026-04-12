@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, Suspense } from 'react';
-import { motion } from 'motion/react';
+import { motion, useScroll, useTransform } from 'motion/react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Stars, Sparkles } from '@react-three/drei';
 import { ArrowRight, Database, Code2, PieChart, TrendingUp, Zap, CheckCircle2, Rocket, Globe, ChevronRight, Linkedin, Github, Moon, Sun } from 'lucide-react';
@@ -37,10 +37,45 @@ function BackgroundScene({ isDarkMode }: { isDarkMode: boolean }) {
   );
 }
 
+function LiquidButton({ href, children, variant = 'primary', className = '' }: { href: string, children: React.ReactNode, variant?: 'primary' | 'secondary', className?: string }) {
+  const baseClasses = "relative overflow-hidden rounded-full px-8 py-4 font-semibold transition-colors duration-300 flex items-center justify-center gap-2 shadow-lg";
+  
+  const variants = {
+    primary: {
+      className: "bg-black dark:bg-white text-white dark:text-black hover:bg-indigo-600 dark:hover:bg-indigo-500 hover:text-white dark:hover:text-white",
+    },
+    secondary: {
+      className: "bg-white/50 dark:bg-white/5 backdrop-blur-md border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white hover:bg-gray-900 dark:hover:bg-white hover:text-white dark:hover:text-black",
+    }
+  };
+
+  const v = variants[variant];
+
+  return (
+    <motion.a 
+      href={href} 
+      className={`${baseClasses} ${v.className} ${className}`}
+      whileTap={{ scale: 0.85, rotate: 8 }}
+      transition={{ type: "spring", stiffness: 300, damping: 15 }}
+    >
+      {children}
+    </motion.a>
+  );
+}
+
 export default function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
+  
+  // Scroll Parallax Hooks
+  const { scrollY } = useScroll();
+  const heroY = useTransform(scrollY, [0, 1000], [0, 250]);
+  const heroOpacity = useTransform(scrollY, [0, 500], [1, 0]);
+  
+  const glowY1 = useTransform(scrollY, [0, 3000], [0, -600]);
+  const glowY2 = useTransform(scrollY, [0, 3000], [0, 600]);
 
   useEffect(() => {
+    document.documentElement.classList.add('scroll-smooth');
     if (isDarkMode) {
       document.documentElement.classList.add('dark');
     } else {
@@ -48,9 +83,10 @@ export default function App() {
     }
   }, [isDarkMode]);
 
+  // Refined animations with spring physics
   const fadeInUp = {
     hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+    visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 80, damping: 20 } }
   };
 
   const staggerContainer = {
@@ -71,6 +107,12 @@ export default function App() {
             <BackgroundScene isDarkMode={isDarkMode} />
           </Suspense>
         </Canvas>
+      </div>
+
+      {/* Ambient Parallax Glows */}
+      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <motion.div style={{ y: glowY1 }} className="absolute top-[20%] left-[5%] w-[30rem] h-[30rem] bg-indigo-500/10 dark:bg-indigo-500/20 rounded-full blur-[120px]" />
+        <motion.div style={{ y: glowY2 }} className="absolute top-[60%] right-[5%] w-[40rem] h-[40rem] bg-purple-500/10 dark:bg-purple-500/20 rounded-full blur-[150px]" />
       </div>
 
       {/* Foreground Content */}
@@ -107,17 +149,20 @@ export default function App() {
                 >
                   {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
                 </button>
-                <a href="mailto:chandra572gourav@proton.me" className="hidden md:inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold rounded-full text-white dark:text-black bg-black dark:bg-white hover:bg-gray-800 dark:hover:bg-gray-200 transition-all shadow-[0_0_20px_rgba(0,0,0,0.1)] dark:shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+                <LiquidButton href="mailto:chandra572gourav@proton.me" variant="primary" className="!py-2 !px-6 text-sm hidden md:flex">
                   Let's Talk
-                </a>
+                </LiquidButton>
               </motion.div>
             </div>
           </div>
         </nav>
 
         {/* Hero Section */}
-        <section className="pt-32 pb-20 px-6 relative min-h-screen flex items-center justify-center text-center">
-          <div className="max-w-4xl mx-auto w-full">
+        <section className="pt-32 pb-20 px-6 relative min-h-screen flex items-center justify-center text-center overflow-hidden">
+          <motion.div 
+            style={{ y: heroY, opacity: heroOpacity }}
+            className="max-w-4xl mx-auto w-full"
+          >
             <motion.div 
               variants={staggerContainer}
               initial="hidden"
@@ -143,14 +188,14 @@ export default function App() {
                 <span className="w-8 h-px bg-indigo-300 dark:bg-indigo-800"></span>
               </motion.div>
               
-              <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-                <a href="#process" className="w-full sm:w-auto bg-black dark:bg-white text-white dark:text-black px-8 py-4 rounded-full font-semibold hover:bg-gray-800 dark:hover:bg-gray-200 transition-all flex items-center justify-center gap-2 group shadow-[0_0_20px_rgba(0,0,0,0.1)] dark:shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+              <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 w-full">
+                <LiquidButton href="#process" variant="primary" className="w-full sm:w-auto">
                   Explore Solutions
                   <ArrowRight className="w-4.5 h-4.5 group-hover:translate-x-1 transition-transform" />
-                </a>
-                <a href="mailto:chandra572gourav@proton.me" className="w-full sm:w-auto bg-white/50 dark:bg-white/5 backdrop-blur-md border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white px-8 py-4 rounded-full font-semibold hover:bg-gray-100 dark:hover:bg-white/10 transition-all text-center">
+                </LiquidButton>
+                <LiquidButton href="mailto:chandra572gourav@proton.me" variant="secondary" className="w-full sm:w-auto">
                   Let's Talk
-                </a>
+                </LiquidButton>
               </motion.div>
 
               <motion.div variants={fadeInUp} className="grid grid-cols-3 gap-8 md:gap-16 border-t border-gray-200 dark:border-white/10 pt-10 transition-colors duration-500">
@@ -177,10 +222,10 @@ export default function App() {
                 </div>
               </motion.div>
             </motion.div>
-          </div>
+          </motion.div>
         </section>
 
-        {/* How I Work (Methodology) - Moved up */}
+        {/* How I Work (Methodology) */}
         <section id="process" className="py-24 px-6 relative">
           <div className="max-w-7xl mx-auto">
             <motion.div 
@@ -226,7 +271,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* Tech Stack - Moved down */}
+        {/* Tech Stack */}
         <section id="expertise" className="py-24 px-6 relative">
           <div className="max-w-7xl mx-auto">
             <motion.div 
@@ -379,9 +424,9 @@ export default function App() {
               HAVE A PROJECT IN MIND? <br className="hidden md:block" />
               LET'S TALK ABOUT IT.
             </h2>
-            <a href="mailto:chandra572gourav@proton.me" className="bg-black dark:bg-white text-white dark:text-black px-10 py-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-200 transition-all whitespace-nowrap shadow-[0_0_20px_rgba(0,0,0,0.1)] dark:shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+            <LiquidButton href="mailto:chandra572gourav@proton.me" variant="primary" className="px-10">
               EMAIL ME
-            </a>
+            </LiquidButton>
           </motion.div>
         </section>
 
