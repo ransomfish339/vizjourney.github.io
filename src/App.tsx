@@ -1,9 +1,10 @@
 import { useState, useEffect, useRef, Suspense } from 'react';
-import { motion, useScroll, useTransform } from 'motion/react';
+import { motion, useScroll, useTransform, useMotionValueEvent, AnimatePresence } from 'motion/react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Stars, Sparkles } from '@react-three/drei';
-import { ArrowRight, Database, Code2, PieChart, TrendingUp, Zap, CheckCircle2, Rocket, Globe, ChevronRight, Linkedin, Github, Moon, Sun } from 'lucide-react';
+import { ArrowRight, ArrowUp, Database, Code2, PieChart, TrendingUp, Zap, CheckCircle2, Rocket, Globe, ChevronRight, Linkedin, Github, Moon, Sun } from 'lucide-react';
 import * as THREE from 'three';
+import { t, Language } from './translations';
 
 function BackgroundScene({ isDarkMode }: { isDarkMode: boolean }) {
   const groupRef = useRef<THREE.Group>(null);
@@ -63,16 +64,58 @@ function LiquidButton({ href, children, variant = 'primary', className = '' }: {
   );
 }
 
+function NotFoundContent({ content }: { content: typeof t.en.notFound }) {
+  return (
+    <div className="min-h-screen pt-32 pb-20 px-6 flex flex-col items-center justify-center text-center">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <h1 className="text-8xl md:text-9xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 mb-4">404</h1>
+        <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-gray-900 dark:text-white tracking-tight">{content.title}</h2>
+        <p className="text-gray-600 dark:text-gray-400 max-w-md mx-auto mb-10 text-lg">
+          {content.desc}
+        </p>
+        <LiquidButton href="/" variant="primary">
+          {content.back}
+        </LiquidButton>
+      </motion.div>
+    </div>
+  );
+}
+
 export default function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
+  const [showBackToTop, setShowBackToTop] = useState(false);
+  const [currentPath, setCurrentPath] = useState(window.location.pathname);
+  const [lang, setLang] = useState<Language>('en');
+
+  const content = t[lang];
+
+  useEffect(() => {
+    const handleLocationChange = () => setCurrentPath(window.location.pathname);
+    window.addEventListener('popstate', handleLocationChange);
+    return () => window.removeEventListener('popstate', handleLocationChange);
+  }, []);
+
+  const isNotFound = currentPath !== '/' && currentPath !== '/index.html' && currentPath !== '/vizjourney.github.io' && currentPath !== '/vizjourney.github.io/';
   
   // Scroll Parallax Hooks
-  const { scrollY } = useScroll();
+  const { scrollY, scrollYProgress } = useScroll();
   const heroY = useTransform(scrollY, [0, 1000], [0, 250]);
   const heroOpacity = useTransform(scrollY, [0, 500], [1, 0]);
   
   const glowY1 = useTransform(scrollY, [0, 3000], [0, -600]);
   const glowY2 = useTransform(scrollY, [0, 3000], [0, 600]);
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    if (latest > 500) {
+      setShowBackToTop(true);
+    } else {
+      setShowBackToTop(false);
+    }
+  });
 
   useEffect(() => {
     document.documentElement.classList.add('scroll-smooth');
@@ -117,8 +160,14 @@ export default function App() {
 
       {/* Foreground Content */}
       <div className="relative z-10">
+        {/* Scroll Progress Bar */}
+        <motion.div
+          className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 z-[100] origin-left"
+          style={{ scaleX: scrollYProgress }}
+        />
+
         {/* Navigation */}
-        <nav className="fixed w-full z-50 bg-white/50 dark:bg-black/50 backdrop-blur-xl border-b border-gray-200/50 dark:border-white/5 transition-colors duration-500">
+        <nav className="fixed w-full z-50 bg-white/50 dark:bg-black/50 backdrop-blur-xl border-b border-gray-200/50 dark:border-white/5 transition-colors duration-500 mt-1">
           <div className="max-w-7xl mx-auto px-6">
             <div className="flex justify-between items-center h-20">
               <motion.div 
@@ -135,15 +184,21 @@ export default function App() {
                 animate={{ opacity: 1, y: 0 }}
                 className="hidden md:flex space-x-8"
               >
-                <a href="#process" className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors">Process</a>
-                <a href="#expertise" className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors">Tech Stack</a>
-                <a href="#consulting" className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors">Consulting</a>
+                <a href="#process" className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors">{content.nav.process}</a>
+                <a href="#expertise" className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors">{content.nav.techStack}</a>
+                <a href="#consulting" className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors">{content.nav.consulting}</a>
               </motion.div>
               <motion.div 
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 className="flex items-center space-x-4"
               >
+                <button
+                  onClick={() => setLang(lang === 'en' ? 'de' : 'en')}
+                  className="px-2 py-1 text-xs font-bold rounded-md bg-gray-200 dark:bg-white/10 text-gray-700 dark:text-white hover:bg-gray-300 dark:hover:bg-white/20 transition-colors uppercase"
+                >
+                  {lang === 'en' ? 'DE' : 'EN'}
+                </button>
                 <button
                   onClick={() => setIsDarkMode(!isDarkMode)}
                   className="p-2 rounded-full bg-gray-200 dark:bg-white/10 text-gray-700 dark:text-white hover:bg-gray-300 dark:hover:bg-white/20 transition-colors"
@@ -152,14 +207,18 @@ export default function App() {
                   {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
                 </button>
                 <LiquidButton href="mailto:chandra572gourav@proton.me" variant="primary" className="!py-2 !px-6 text-sm hidden md:flex">
-                  Let's Talk
+                  {content.nav.letsTalk}
                 </LiquidButton>
               </motion.div>
             </div>
           </div>
         </nav>
 
-        {/* Hero Section */}
+        {isNotFound ? (
+          <NotFoundContent content={content.notFound} />
+        ) : (
+          <>
+            {/* Hero Section */}
         <section className="pt-32 pb-20 px-6 relative min-h-screen flex items-center justify-center text-center overflow-hidden">
           <motion.div 
             style={{ y: heroY, opacity: heroOpacity }}
@@ -173,30 +232,30 @@ export default function App() {
             >
               <motion.span variants={fadeInUp} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/50 dark:bg-white/5 backdrop-blur-md border border-gray-200 dark:border-white/10 text-xs font-bold uppercase tracking-widest text-gray-600 dark:text-gray-200 mb-8 transition-colors duration-500">
                 <Zap className="w-3.5 h-3.5 text-indigo-500 dark:text-indigo-400" />
-                Gourav Chandra
+                {content.hero.tagline}
               </motion.span>
               <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-[1.1] text-gray-900 dark:text-white drop-shadow-sm dark:drop-shadow-2xl transition-colors duration-500">
-                Bridging the gap between <br />
+                {content.hero.title1} <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 dark:from-indigo-400 dark:via-purple-400 dark:to-pink-400">
-                  Data & Strategy.
+                  {content.hero.title2}
                 </span>
               </motion.h1>
               <motion.p variants={fadeInUp} className="max-w-2xl mx-auto text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-6 leading-relaxed transition-colors duration-500">
-                Transforming complex data into actionable strategies and scalable e-commerce solutions. Driving measurable growth through technical architecture and business intelligence.
+                {content.hero.subtitle}
               </motion.p>
               <motion.div variants={fadeInUp} className="flex items-center justify-center gap-3 mb-10 text-indigo-600 dark:text-indigo-400 font-medium italic text-sm transition-colors duration-500">
                 <span className="w-8 h-px bg-indigo-300 dark:bg-indigo-800"></span>
-                "Data is the compass, strategy is the map."
+                {content.hero.quote}
                 <span className="w-8 h-px bg-indigo-300 dark:bg-indigo-800"></span>
               </motion.div>
               
               <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 w-full">
                 <LiquidButton href="#process" variant="primary" className="w-full sm:w-auto">
-                  Explore Solutions
+                  {content.hero.explore}
                   <ArrowRight className="w-4.5 h-4.5 group-hover:translate-x-1 transition-transform" />
                 </LiquidButton>
                 <LiquidButton href="mailto:chandra572gourav@proton.me" variant="secondary" className="w-full sm:w-auto">
-                  Let's Talk
+                  {content.hero.letsTalk}
                 </LiquidButton>
               </motion.div>
 
@@ -206,21 +265,21 @@ export default function App() {
                     <Zap className="w-4 h-4" />
                     <span className="text-2xl font-bold text-gray-900 dark:text-white tracking-tight">5+</span>
                   </div>
-                  <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider text-center">Years Experience</p>
+                  <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider text-center">{content.hero.yearsExp}</p>
                 </div>
                 <div className="flex flex-col items-center">
                   <div className="flex items-center justify-center gap-2 text-indigo-500 dark:text-indigo-400 mb-1">
                     <TrendingUp className="w-4 h-4" />
                     <span className="text-2xl font-bold text-gray-900 dark:text-white tracking-tight">50+</span>
                   </div>
-                  <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider text-center">Projects Delivered</p>
+                  <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider text-center">{content.hero.projects}</p>
                 </div>
                 <div className="flex flex-col items-center">
                   <div className="flex items-center justify-center gap-2 text-indigo-500 dark:text-indigo-400 mb-1">
                     <Database className="w-4 h-4" />
                     <span className="text-2xl font-bold text-gray-900 dark:text-white tracking-tight">30+</span>
                   </div>
-                  <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider text-center">Happy Clients</p>
+                  <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider text-center">{content.hero.clients}</p>
                 </div>
               </motion.div>
             </motion.div>
@@ -237,9 +296,9 @@ export default function App() {
               variants={fadeInUp}
               className="mb-20 text-center"
             >
-              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white tracking-tight transition-colors duration-500">Methodology.</h2>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white tracking-tight transition-colors duration-500">{content.methodology.title}</h2>
               <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg transition-colors duration-500">
-                A proven framework for solving complex business challenges.
+                {content.methodology.subtitle}
               </p>
             </motion.div>
             
@@ -253,10 +312,10 @@ export default function App() {
                 className="grid md:grid-cols-4 gap-12 relative z-10"
               >
                 {[
-                  { icon: Database, color: "text-indigo-500 dark:text-indigo-400", title: "Discovery", desc: "Aligning with business goals, identifying current challenges, and auditing available data infrastructure." },
-                  { icon: TrendingUp, color: "text-purple-500 dark:text-purple-400", title: "Analysis", desc: "Uncovering patterns, operational inefficiencies, and strategic opportunities for growth." },
-                  { icon: PieChart, color: "text-pink-500 dark:text-pink-400", title: "Strategy", desc: "Architecting clear, data-backed roadmaps designed for measurable impact." },
-                  { icon: Rocket, color: "text-orange-500 dark:text-orange-400", title: "Execution", desc: "Deploying solutions, monitoring key performance indicators, and optimizing for continuous improvement." }
+                  { icon: Database, color: "text-indigo-500 dark:text-indigo-400", title: content.methodology.steps[0].title, desc: content.methodology.steps[0].desc },
+                  { icon: TrendingUp, color: "text-purple-500 dark:text-purple-400", title: content.methodology.steps[1].title, desc: content.methodology.steps[1].desc },
+                  { icon: PieChart, color: "text-pink-500 dark:text-pink-400", title: content.methodology.steps[2].title, desc: content.methodology.steps[2].desc },
+                  { icon: Rocket, color: "text-orange-500 dark:text-orange-400", title: content.methodology.steps[3].title, desc: content.methodology.steps[3].desc }
                 ].map((step, idx) => (
                   <motion.div key={idx} variants={fadeInUp} className="relative">
                     <div className="w-16 h-16 bg-white dark:bg-black/50 backdrop-blur-md rounded-full border border-gray-200 dark:border-white/20 shadow-[0_0_30px_rgba(0,0,0,0.05)] dark:shadow-[0_0_30px_rgba(0,0,0,0.5)] flex items-center justify-center mb-6 mx-auto md:mx-0 transition-colors duration-500">
@@ -283,9 +342,9 @@ export default function App() {
               variants={fadeInUp}
               className="mb-20 text-center"
             >
-              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white tracking-tight transition-colors duration-500">Tech Stack.</h2>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white tracking-tight transition-colors duration-500">{content.techStack.title}</h2>
               <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg transition-colors duration-500">
-                The modern tools and technologies powering scalable web applications and data-driven solutions.
+                {content.techStack.subtitle}
               </p>
             </motion.div>
             
@@ -297,25 +356,17 @@ export default function App() {
               className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
             >
               {[
-                { icon: Globe, color: "text-indigo-500 dark:text-indigo-400", title: "E-Commerce & Web", items: [
-                  { name: "Shopware 6", desc: "Theme customizations & Rule Builder", accomplishment: "Successfully managed and scaled 20+ live e-commerce product pages across multiple regions.", tags: ["Twig", "Tailwind CSS", "HTML/CSS"] },
-                  { name: "Web Development", desc: "Frontend & custom landing pages", accomplishment: "Engineered high-converting promotional landing pages and marketing funnels for global campaigns.", tags: ["JavaScript", "APIs", "Marketing Funnels"] }
-                ]},
-                { icon: PieChart, color: "text-purple-500 dark:text-purple-400", title: "Data & Analytics", items: [
-                  { name: "Business Intelligence", desc: "Executive KPI dashboards", accomplishment: "Developed executive-level KPI dashboards tracking day-to-day revenue, costs, and inventory.", tags: ["Power BI", "DAX", "M Query"] },
-                  { name: "Advanced Modeling", desc: "End-to-end pricing models", accomplishment: "Built end-to-end dynamic pricing models factoring competitor analysis across global markets.", tags: ["Excel", "Competitor Analysis", "Forecasting"] }
-                ]},
-                { icon: Database, color: "text-pink-500 dark:text-pink-400", title: "Databases & Backend", items: [
-                  { name: "Data Management", desc: "Fetching & structuring data", accomplishment: "Architected robust data pipelines to fetch and structure complex datasets for cross-regional analysis.", tags: ["SQL", "MongoDB", "PHP"] },
-                  { name: "Automation", desc: "SFTP/FTP & data pipelines", accomplishment: "Automated critical data transfers and API workflows, eliminating manual operational bottlenecks.", tags: ["Python", "Scripting", "API Integrations"] }
-                ]},
-                { icon: TrendingUp, color: "text-blue-500 dark:text-blue-400", title: "Global Operations", items: [
-                  { name: "Marketplaces", desc: "Multi-regional sales analysis", accomplishment: "Optimized sales and return report analysis across diverse omnichannel platforms.", tags: ["Global Marketplaces", "D2C Webshops", "Omnichannel"] },
-                  { name: "Strategy", desc: "Dynamic pricing & inventory", accomplishment: "Implemented data-driven inventory forecasting and pricing strategies for multi-regional markets.", tags: ["Multi-Regional", "Cross-Border", "Global Markets"] }
-                ]}
+                { icon: Globe, color: "text-indigo-500 dark:text-indigo-400", title: content.techStack.categories[0].title, items: content.techStack.categories[0].items },
+                { icon: PieChart, color: "text-purple-500 dark:text-purple-400", title: content.techStack.categories[1].title, items: content.techStack.categories[1].items },
+                { icon: Database, color: "text-pink-500 dark:text-pink-400", title: content.techStack.categories[2].title, items: content.techStack.categories[2].items },
+                { icon: TrendingUp, color: "text-blue-500 dark:text-blue-400", title: content.techStack.categories[3].title, items: content.techStack.categories[3].items }
               ].map((category, idx) => (
-                <motion.div key={idx} variants={fadeInUp} className="p-8 rounded-3xl bg-white/60 dark:bg-white/5 backdrop-blur-xl border border-gray-200 dark:border-white/10 hover:bg-white/80 dark:hover:bg-white/10 transition-all group shadow-[0_8px_32px_rgba(0,0,0,0.05)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.3)]">
-                  <div className="w-12 h-12 bg-gray-100 dark:bg-white/10 rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform">
+                <motion.div 
+                  key={idx} 
+                  variants={fadeInUp} 
+                  className="p-8 rounded-3xl bg-white/60 dark:bg-white/5 backdrop-blur-xl border border-gray-200 dark:border-white/10 hover:bg-white/80 dark:hover:bg-white/10 transition-colors duration-300 group shadow-[0_8px_32px_rgba(0,0,0,0.05)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.3)]"
+                >
+                  <div className="w-12 h-12 bg-gray-100 dark:bg-white/10 rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-300">
                     <category.icon className={`w-5 h-5 ${category.color}`} />
                   </div>
                   <h3 className="text-xl font-bold mb-6 text-gray-900 dark:text-white">{category.title}</h3>
@@ -351,9 +402,9 @@ export default function App() {
               variants={fadeInUp}
               className="text-center mb-20"
             >
-              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white tracking-tight transition-colors duration-500">Consulting & Advisory.</h2>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white tracking-tight transition-colors duration-500">{content.consulting.title}</h2>
               <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg transition-colors duration-500">
-                Partnering with organizations to solve complex operational challenges. Delivering specialized expertise across web development, data analytics, and business automation.
+                {content.consulting.subtitle}
               </p>
             </motion.div>
 
@@ -365,10 +416,10 @@ export default function App() {
               className="grid md:grid-cols-2 gap-8"
             >
               {[
-                { icon: Globe, color: "text-indigo-500 dark:text-indigo-400", bg: "bg-indigo-100 dark:bg-indigo-900/30", title: "E-Commerce Architecture", desc: "Architecting and managing scalable Shopware infrastructures. Deploying high-converting landing pages and marketing funnels to ensure a seamless digital experience." },
-                { icon: TrendingUp, color: "text-green-500 dark:text-green-400", bg: "bg-green-100 dark:bg-green-900/30", title: "Pricing Strategy & Modeling", desc: "Developing dynamic pricing models for multi-regional global markets. Leveraging competitor analysis to optimize margins across diverse omnichannel marketplaces." },
-                { icon: PieChart, color: "text-purple-500 dark:text-purple-400", bg: "bg-purple-100 dark:bg-purple-900/30", title: "Business Intelligence", desc: "Designing executive-level KPI dashboards for comprehensive operational tracking. Enabling real-time visibility into revenue targets and inventory forecasting." },
-                { icon: Database, color: "text-orange-500 dark:text-orange-400", bg: "bg-orange-100 dark:bg-orange-900/30", title: "Data Automation", desc: "Streamlining backend operations through intelligent automation. Replacing manual workflows with robust Python and SQL pipelines and automated data transfers." }
+                { icon: Globe, color: "text-indigo-500 dark:text-indigo-400", bg: "bg-indigo-100 dark:bg-indigo-900/30", title: content.consulting.services[0].title, desc: content.consulting.services[0].desc },
+                { icon: TrendingUp, color: "text-green-500 dark:text-green-400", bg: "bg-green-100 dark:bg-green-900/30", title: content.consulting.services[1].title, desc: content.consulting.services[1].desc },
+                { icon: PieChart, color: "text-purple-500 dark:text-purple-400", bg: "bg-purple-100 dark:bg-purple-900/30", title: content.consulting.services[2].title, desc: content.consulting.services[2].desc },
+                { icon: Database, color: "text-orange-500 dark:text-orange-400", bg: "bg-orange-100 dark:bg-orange-900/30", title: content.consulting.services[3].title, desc: content.consulting.services[3].desc }
               ].map((service, idx) => (
                 <motion.div key={idx} variants={fadeInUp} className="p-8 rounded-3xl bg-white/60 dark:bg-white/5 backdrop-blur-xl border border-gray-200 dark:border-white/10 hover:bg-white/80 dark:hover:bg-white/10 transition-all flex flex-col sm:flex-row gap-6 shadow-[0_8px_32px_rgba(0,0,0,0.05)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.3)]">
                   <div className={`w-16 h-16 rounded-2xl ${service.bg} border border-gray-200 dark:border-white/5 flex items-center justify-center flex-shrink-0 transition-colors duration-500`}>
@@ -395,9 +446,9 @@ export default function App() {
               className="grid md:grid-cols-3 gap-12"
             >
               {[
-                { title: "Transparency", desc: "Delivering transparent data insights and straightforward strategic advice, ensuring complete clarity on business performance." },
-                { title: "Practicality", desc: "Focusing on implementable tools and strategies that drive tangible results in real-world business environments." },
-                { title: "Impact", desc: "Dedicated to a single objective: maximizing business profitability and operational efficiency." }
+                { title: content.coreValues[0].title, desc: content.coreValues[0].desc },
+                { title: content.coreValues[1].title, desc: content.coreValues[1].desc },
+                { title: content.coreValues[2].title, desc: content.coreValues[2].desc }
               ].map((val, idx) => (
                 <motion.div key={idx} variants={fadeInUp} className="text-center md:text-left">
                   <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white flex items-center gap-2 justify-center md:justify-start transition-colors duration-500">
@@ -423,11 +474,11 @@ export default function App() {
             className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 relative z-10 p-12 rounded-[40px] bg-white/60 dark:bg-white/5 backdrop-blur-xl border border-gray-200 dark:border-white/10 shadow-[0_0_50px_rgba(79,70,229,0.1)] dark:shadow-[0_0_50px_rgba(79,70,229,0.2)] transition-colors duration-500"
           >
             <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-center md:text-left text-gray-900 dark:text-white transition-colors duration-500">
-              HAVE A PROJECT IN MIND? <br className="hidden md:block" />
-              LET'S TALK ABOUT IT.
+              {content.cta.title1} <br className="hidden md:block" />
+              {content.cta.title2}
             </h2>
             <LiquidButton href="mailto:chandra572gourav@proton.me" variant="primary" className="px-10">
-              EMAIL ME
+              {content.cta.button}
             </LiquidButton>
           </motion.div>
         </section>
@@ -437,25 +488,25 @@ export default function App() {
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
               <div className="md:col-span-2">
-                <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white transition-colors duration-500">Ready to scale?</h2>
+                <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white transition-colors duration-500">{content.footer.readyToScale}</h2>
                 <p className="text-gray-600 dark:text-gray-400 mb-8 max-w-sm transition-colors duration-500">
-                  Currently accepting new partnerships. For strategic data solutions and e-commerce architecture, let's start a conversation.
+                  {content.footer.description}
                 </p>
                 <a href="mailto:chandra572gourav@proton.me" className="text-xl font-bold text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors flex items-center gap-2 group">
-                  Send an email
+                  {content.footer.sendEmail}
                   <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>
               <div>
-                <h4 className="font-bold mb-6 uppercase text-xs tracking-widest text-gray-500">Navigation</h4>
+                <h4 className="font-bold mb-6 uppercase text-xs tracking-widest text-gray-500">{content.footer.navTitle}</h4>
                 <ul className="space-y-4">
-                  <li><a href="#process" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">Methodology</a></li>
-                  <li><a href="#expertise" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">Tech Stack</a></li>
-                  <li><a href="#consulting" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">Consulting</a></li>
+                  <li><a href="#process" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">{content.nav.process}</a></li>
+                  <li><a href="#expertise" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">{content.nav.techStack}</a></li>
+                  <li><a href="#consulting" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">{content.nav.consulting}</a></li>
                 </ul>
               </div>
               <div>
-                <h4 className="font-bold mb-6 uppercase text-xs tracking-widest text-gray-500">Links</h4>
+                <h4 className="font-bold mb-6 uppercase text-xs tracking-widest text-gray-500">{content.footer.linksTitle}</h4>
                 <ul className="space-y-4">
                   <li><a href="https://www.linkedin.com/in/gouravchandra" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors flex items-center gap-2"><Linkedin className="w-4 h-4" /> LinkedIn</a></li>
                   <li><a href="https://github.com/ransomfish339" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors flex items-center gap-2"><Github className="w-4 h-4" /> GitHub</a></li>
@@ -464,15 +515,34 @@ export default function App() {
               </div>
             </div>
             <div className="flex flex-col md:flex-row justify-between items-center pt-10 border-t border-gray-200 dark:border-white/10 gap-6 transition-colors duration-500">
-              <p className="text-sm text-gray-500">© {new Date().getFullYear()} Gourav Chandra. All rights reserved.</p>
+              <p className="text-sm text-gray-500">© {new Date().getFullYear()} {content.footer.rights}</p>
               <div className="flex gap-4 text-sm text-gray-500">
-                <a href="#" className="hover:text-gray-900 dark:hover:text-white transition-colors">Privacy Policy</a>
-                <a href="#" className="hover:text-gray-900 dark:hover:text-white transition-colors">Terms of Service</a>
+                <a href="#" className="hover:text-gray-900 dark:hover:text-white transition-colors">{content.footer.privacy}</a>
+                <a href="#" className="hover:text-gray-900 dark:hover:text-white transition-colors">{content.footer.terms}</a>
               </div>
             </div>
           </div>
         </footer>
+          </>
+        )}
       </div>
+
+      {/* Back to Top Button */}
+      <AnimatePresence>
+        {showBackToTop && (
+          <motion.a
+            href="#"
+            initial={{ opacity: 0, y: 20, scale: 0.8 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 20, scale: 0.8 }}
+            transition={{ type: "spring", stiffness: 200, damping: 20 }}
+            className="fixed bottom-8 right-8 z-50 p-3 rounded-full bg-indigo-600 text-white shadow-lg shadow-indigo-500/25 hover:bg-indigo-500 hover:-translate-y-1 hover:shadow-indigo-500/40 transition-all duration-300 flex items-center justify-center"
+            aria-label="Back to Top"
+          >
+            <ArrowUp className="w-6 h-6" />
+          </motion.a>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
