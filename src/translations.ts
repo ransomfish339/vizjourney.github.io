@@ -17,8 +17,8 @@ export const t = {
       explore: "Explore Solutions",
       letsTalk: "Let's Talk",
       yearsExp: "Years Experience",
-      projects: "Projects Delivered",
-      clients: "Happy Clients"
+      projects: "Completed Projects",
+      clients: "Global Clients"
     },
     methodology: {
       title: "Methodology.",
@@ -81,8 +81,8 @@ export const t = {
     ],
     cta: {
       title1: "HAVE A PROJECT IN MIND?",
-      title2: "LET'S TALK ABOUT IT.",
-      button: "EMAIL ME"
+      title2: "LET'S TALK.",
+      button: "GET IN TOUCH"
     },
     footer: {
       readyToScale: "Ready to scale?",
@@ -109,24 +109,24 @@ export const t = {
     },
     hero: {
       tagline: "Gourav Chandra",
-      title1: "Die Brücke zwischen",
+      title1: "Die Verbindung von",
       title2: "Daten & Strategie.",
       subtitle: "Transformation komplexer Daten in umsetzbare Strategien und skalierbare E-Commerce-Lösungen. Messbares Wachstum durch technische Architektur und Business Intelligence.",
       quote: '"Daten sind der Kompass, Strategie ist die Karte."',
       explore: "Lösungen entdecken",
-      letsTalk: "Kontakt",
+      letsTalk: "Kontakt aufnehmen",
       yearsExp: "Jahre Erfahrung",
-      projects: "Projekte geliefert",
-      clients: "Zufriedene Kunden"
+      projects: "Erfolgreiche Projekte",
+      clients: "Globale Kunden"
     },
     methodology: {
       title: "Methodik.",
       subtitle: "Ein bewährtes Framework zur Lösung komplexer geschäftlicher Herausforderungen.",
       steps: [
-        { title: "Entdeckung", desc: "Ausrichtung auf Geschäftsziele, Identifizierung aktueller Herausforderungen und Überprüfung der verfügbaren Dateninfrastruktur." },
+        { title: "Evaluierung", desc: "Ausrichtung auf Geschäftsziele, Identifizierung aktueller Herausforderungen und Überprüfung der verfügbaren Dateninfrastruktur." },
         { title: "Analyse", desc: "Aufdecken von Mustern, betrieblichen Ineffizienzen und strategischen Wachstumschancen." },
         { title: "Strategie", desc: "Entwicklung klarer, datengestützter Fahrpläne, die auf messbare Ergebnisse ausgelegt sind." },
-        { title: "Ausführung", desc: "Bereitstellung von Lösungen, Überwachung wichtiger Leistungskennzahlen und Optimierung für kontinuierliche Verbesserungen." }
+        { title: "Umsetzung", desc: "Bereitstellung von Lösungen, Überwachung wichtiger Leistungskennzahlen und Optimierung für kontinuierliche Verbesserungen." }
       ]
     },
     techStack: {
@@ -179,12 +179,12 @@ export const t = {
       { title: "Wirkung", desc: "Einem einzigen Ziel verpflichtet: Maximierung der geschäftlichen Rentabilität und operativen Effizienz." }
     ],
     cta: {
-      title1: "HABEN SIE EIN PROJEKT IM SINNE?",
-      title2: "LASSEN SIE UNS DARÜBER SPRECHEN.",
-      button: "E-MAIL SENDEN"
+      title1: "EIN PROJEKT IN PLANUNG?",
+      title2: "LASSEN SIE UNS SPRECHEN.",
+      button: "NACHRICHT SENDEN"
     },
     footer: {
-      readyToScale: "Bereit zu skalieren?",
+      readyToScale: "Bereit für den nächsten Schritt?",
       description: "Ich nehme derzeit neue Partnerschaften an. Für strategische Datenlösungen und E-Commerce-Architektur lassen Sie uns ein Gespräch beginnen.",
       sendEmail: "E-Mail senden",
       navTitle: "Navigation",
