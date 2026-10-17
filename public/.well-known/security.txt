@@ -1,0 +1,4 @@
+Contact: mailto:chandra572gourav@proton.me
+Preferred-Languages: en, de
+Canonical: https://vizjourney.com/.well-known/security.txt
+Expires: 2027-12-31T23:59:59.000Z

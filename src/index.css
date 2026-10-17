@@ -3,7 +3,9 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 }
 
 html {
@@ -12,4 +14,191 @@ html {
 
 body {
   overflow-x: hidden;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* ============================================================================
+   LIQUID GLASS + SOFT NEOMORPHISM + MINIMALISM DESIGN SYSTEM
+   ============================================================================ */
+
+/* 1. Liquid Glass Panel (Refractive Specular Surface) */
+.liquid-glass {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.72) 0%,
+    rgba(255, 255, 255, 0.42) 100%
+  );
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow:
+    0 12px 32px -8px rgba(15, 23, 42, 0.06),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -1px 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.dark .liquid-glass {
+  background: linear-gradient(
+    135deg,
+    rgba(25, 33, 46, 0.68) 0%,
+    rgba(15, 20, 28, 0.48) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow:
+    0 16px 36px -8px rgba(0, 0, 0, 0.55),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.14),
+    inset 0 -1px 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* 2. Soft Neomorphic + Liquid Glass Hybrid Card */
+.neo-glass-card {
+  background: linear-gradient(
+    145deg,
+    rgba(246, 249, 252, 0.85),
+    rgba(232, 238, 245, 0.65)
+  );
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow:
+    8px 8px 20px rgba(166, 180, 200, 0.38),
+    -8px -8px 20px rgba(255, 255, 255, 0.9),
+    inset 0 1px 1px rgba(255, 255, 255, 0.95);
+  transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 180ms cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.neo-glass-card:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    10px 12px 24px rgba(166, 180, 200, 0.46),
+    -8px -8px 20px rgba(255, 255, 255, 0.95),
+    inset 0 1px 1px rgba(255, 255, 255, 1);
+}
+
+.dark .neo-glass-card {
+  background: linear-gradient(
+    145deg,
+    rgba(22, 28, 38, 0.78),
+    rgba(13, 17, 23, 0.68)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    8px 8px 22px rgba(0, 0, 0, 0.65),
+    -6px -6px 16px rgba(255, 255, 255, 0.025),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+.dark .neo-glass-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow:
+    10px 14px 28px rgba(0, 0, 0, 0.75),
+    -6px -6px 16px rgba(255, 255, 255, 0.035),
+    inset 0 1px 1px rgba(255, 255, 255, 0.16);
+}
+
+/* 3. Neomorphic Recessed / Inset Surface (Inputs, Filter Wells, Icon Wells) */
+.neo-inset {
+  background: #E8EEF5;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow:
+    inset 4px 4px 8px rgba(166, 180, 200, 0.45),
+    inset -4px -4px 8px rgba(255, 255, 255, 0.85);
+}
+
+.dark .neo-inset {
+  background: #090C10;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow:
+    inset 4px 4px 9px rgba(0, 0, 0, 0.75),
+    inset -3px -3px 7px rgba(255, 255, 255, 0.025);
+}
+
+/* 4. Tactile Neomorphic Button (Secondary / Utility) */
+.neo-btn {
+  background: linear-gradient(145deg, #F5F8FC, #E4EBF3);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow:
+    4px 4px 10px rgba(166, 180, 200, 0.4),
+    -4px -4px 10px rgba(255, 255, 255, 0.9),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  transition: transform 150ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.neo-btn:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    6px 6px 14px rgba(166, 180, 200, 0.48),
+    -4px -4px 12px rgba(255, 255, 255, 0.95),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+.neo-btn:active {
+  transform: translateY(0px);
+  box-shadow:
+    inset 3px 3px 6px rgba(166, 180, 200, 0.45),
+    inset -3px -3px 6px rgba(255, 255, 255, 0.85);
+}
+
+.dark .neo-btn {
+  background: linear-gradient(145deg, #161C26, #0E131A);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow:
+    4px 4px 12px rgba(0, 0, 0, 0.65),
+    -3px -3px 8px rgba(255, 255, 255, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.dark .neo-btn:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.dark .neo-btn:active {
+  transform: translateY(0px);
+  box-shadow:
+    inset 3px 3px 7px rgba(0, 0, 0, 0.75),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.02);
+}
+
+/* 5. Primary Liquid Glass Action Button */
+.neo-btn-primary {
+  background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+  color: #F8FAFC;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    6px 6px 16px rgba(15, 23, 42, 0.22),
+    -4px -4px 12px rgba(255, 255, 255, 0.8),
+    inset 0 1px 1px rgba(255, 255, 255, 0.25);
+  transition: transform 150ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.neo-btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    8px 8px 20px rgba(15, 23, 42, 0.28),
+    -4px -4px 12px rgba(255, 255, 255, 0.9),
+    inset 0 1px 1px rgba(255, 255, 255, 0.35);
+}
+
+.dark .neo-btn-primary {
+  background: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%);
+  color: #0F172A;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow:
+    6px 6px 18px rgba(0, 0, 0, 0.65),
+    -3px -3px 10px rgba(255, 255, 255, 0.05),
+    inset 0 1px 1px rgba(255, 255, 255, 1);
+}
+
+.dark .neo-btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    8px 10px 22px rgba(0, 0, 0, 0.75),
+    -3px -3px 12px rgba(255, 255, 255, 0.08),
+    inset 0 1px 1px rgba(255, 255, 255, 1);
 }
