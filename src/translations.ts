@@ -11,23 +11,23 @@ export const t = {
       letsTalk: "Connect",
     },
     hero: {
-      role: "Gourav Chandra · Commercial, Pricing & Data Strategist · Germany (EU)",
+      role: "Gourav Chandra · Commercial, Pricing & Data Strategist · Germany",
       title1: "Bridging the gap between",
       title2: "Data & Strategy.",
-      subtitle: "Helping industry leaders turn complex market data into clear commercial decisions. Focused on pricing optimization, e-commerce sales strategy, multi-region scaling, and executive decision intelligence.",
+      subtitle: "Helping business leaders turn complex market data into clear commercial decisions—across pricing optimization, e-commerce sales strategy, multi-region growth, and executive reporting.",
       explore: "Strategic Focus",
       letsTalk: "Exchange Ideas",
       quickFacts: [
-        { label: "Core Focus", value: "Pricing & Sales Strategy" },
-        { label: "Growth", value: "Multi-Region Scaling" },
-        { label: "Decision Intelligence", value: "Power BI & Commercial Models" },
-        { label: "Scope", value: "DACH & European Markets" }
+        { label: "Strategy", value: "Pricing & Margin Optimization" },
+        { label: "Commerce", value: "E-Commerce & Channel Growth" },
+        { label: "Intelligence", value: "Power BI & Decision Models" },
+        { label: "Markets", value: "Multi-Region Operations" }
       ]
     },
     consulting: {
       tag: "01 · Strategic Focus",
       title: "Where data meets commercial leadership.",
-      subtitle: "Practical frameworks built for decision-makers to protect margins, scale across regions, and steer daily business performance with clarity.",
+      subtitle: "Practical frameworks built for decision-makers to protect margins, enter new markets, and steer daily business performance with clarity.",
       filterAll: "All Pillars",
       inquireAction: "Exchange perspective",
       services: [
@@ -36,27 +36,27 @@ export const t = {
           number: "01",
           category: "Pricing Strategy",
           title: "Pricing Optimization & Margin Protection",
-          summary: "Clear pricing architecture that balances market competitiveness with healthy contribution margins.",
-          desc: "Designing dynamic pricing frameworks, elasticity models, and competitor monitoring routines so commercial leaders know exactly when to hold price and when to promote across channels.",
-          deliverables: "Price Elasticity · Contribution Margin Models · Channel Pricing · Discount Governance"
+          summary: "Clear pricing structures that balance market competitiveness with healthy contribution margins.",
+          desc: "Designing dynamic pricing models, elasticity checks, and competitor tracking routines so commercial leaders know exactly when to hold price and when to promote across channels.",
+          deliverables: "Price Elasticity · Contribution Margin Models · Channel Pricing · Discount Rules"
         },
         {
           id: "growth",
           number: "02",
           category: "Sales & Scaling",
-          title: "E-Commerce Sales Strategy & Multi-Region Scaling",
-          summary: "Structured commercial expansion across European markets and retail channels.",
-          desc: "Aligning assortment strategy, regional localization, marketplace mix, and unit economics so brands can enter new European markets and scale revenue sustainably.",
-          deliverables: "Multi-Region Rollout · Marketplace Strategy · Assortment Planning · Unit Economics"
+          title: "E-Commerce Sales & Multi-Region Growth",
+          summary: "Structured commercial expansion across new markets and digital sales channels.",
+          desc: "Aligning assortment planning, local pricing, marketplace mix, and unit economics so brands can enter new regions and grow revenue profitably.",
+          deliverables: "Market Expansion · Marketplace Strategy · Assortment Planning · Unit Economics"
         },
         {
           id: "bi",
           number: "03",
           category: "Decision Intelligence",
           title: "Executive Decision Systems",
-          summary: "Direct, automated leadership views instead of fragmented weekly spreadsheets.",
-          desc: "Connecting revenue, return behavior, marketing spend, and inventory health into one clear Power BI cockpit so executives can make fast, confident resource decisions.",
-          deliverables: "Executive Cockpits · P&L Visibility · Cohort & Return Analysis · Demand Forecasting"
+          summary: "Direct, automated leadership views instead of scattered weekly spreadsheets.",
+          desc: "Connecting revenue, return behavior, marketing spend, and stock health into one clear Power BI cockpit so executives can make fast, confident resource decisions.",
+          deliverables: "Executive Cockpits · P&L Visibility · Cohort & Return Analysis · Demand Planning"
         },
         {
           id: "operations",
@@ -65,14 +65,14 @@ export const t = {
           title: "Automated Commercial Workflows",
           summary: "Reliable data foundations that free commercial teams from manual reporting.",
           desc: "Building clean SQL and Python pipelines behind the scenes to unify ERP, store, and marketplace data—giving strategy and buying teams accurate numbers every morning.",
-          deliverables: "SQL & Python Pipelines · Inventory Buffers · Automated Alerts · System Integration"
+          deliverables: "SQL & Python Pipelines · Stock Buffers · Automated Alerts · System Sync"
         }
       ]
     },
     caseStudies: {
       tag: "02 · Selected Case Work",
       title: "Strategic execution in practice.",
-      subtitle: "Examples of how structured data and commercial strategy solve real leadership challenges.",
+      subtitle: "How structured data and commercial strategy solve real leadership challenges.",
       challengeLabel: "Context",
       solutionLabel: "Strategic Approach",
       resultLabel: "Business Impact",
@@ -82,27 +82,27 @@ export const t = {
           index: "01",
           category: "Pricing Optimization · Commercial Strategy",
           title: "Multi-Channel Pricing & Contribution Margin Framework",
-          overview: "Selling across direct online stores and major European marketplaces created constant price pressure, making it hard for leadership to see true net margins after platform fees, shipping, and returns.",
-          solution: "Built a unified contribution margin model and automated price-positioning tracker that factors in real-time competitor shifts, return rates, and channel costs before recommending price adjustments.",
-          outcome: "Decision-makers gained clear visibility into product-level profitability, protecting core margins while staying competitive during peak retail campaigns.",
+          overview: "Selling across direct online stores and marketplaces created constant price pressure, making it hard for leadership to see true net margins after platform fees, shipping, and returns.",
+          solution: "Built a unified contribution margin model and automated price-positioning tracker that factors in competitor shifts, return rates, and channel costs before recommending price changes.",
+          outcome: "Decision-makers gained clear visibility into product-level profitability, protecting core margins while staying competitive during peak sales campaigns.",
           stack: "Pricing Strategy · Margin Modeling · Python · Power BI"
         },
         {
           id: "multiregion-ecommerce-scaling",
           index: "02",
-          category: "Multi-Region Growth · E-Commerce Strategy",
-          title: "European Cross-Border E-Commerce Expansion",
-          overview: "A growing retail business wanted to expand beyond its home market into multiple European countries, each with different customer demand patterns, VAT rules, and fulfillment costs.",
-          solution: "Designed a phased market-entry and sales strategy covering regional assortment selection, localized pricing tiers, and centralized multi-country storefront and inventory governance.",
-          outcome: "Leadership launched and steered new regional sales channels from a single commercial playbook, scaling international revenue without operational bottlenecks.",
-          stack: "Market Expansion · Sales Strategy · Multi-Country Catalog · ERP & Shopware"
+          category: "Market Expansion · E-Commerce Strategy",
+          title: "Multi-Region E-Commerce Expansion",
+          overview: "A growing retail business wanted to expand beyond its home market into several new regions, each with different customer demand, tax and currency rules, and fulfillment costs.",
+          solution: "Designed a phased market-entry and sales strategy covering local assortment selection, regional pricing tiers, and unified catalog and inventory planning.",
+          outcome: "Leadership launched and steered new regional sales channels from a single commercial playbook, growing revenue across markets without operational bottlenecks.",
+          stack: "Sales Strategy · Market Rollout · Assortment Planning · ERP & Shopware"
         },
         {
           id: "executive-decision-cockpit",
           index: "03",
           category: "Decision Intelligence · Executive Reporting",
           title: "Automated Executive Sales & Inventory Cockpit",
-          overview: "Senior management waited days every week for analysts to manually merge sales exports, warehouse stock sheets, and finance numbers before making purchasing or marketing decisions.",
+          overview: "Senior management waited days every week for teams to manually merge sales exports, warehouse stock sheets, and finance numbers before making purchasing or budget decisions.",
           solution: "Created automated overnight data pipelines in SQL and Python feeding directly into an executive Power BI cockpit focused on daily revenue, net margin, stock cover, and return drivers.",
           outcome: "Executives now open a single view each morning to spot demand shifts early, prevent stockouts on key lines, and allocate capital with confidence.",
           stack: "Power BI · DAX · SQL · Python Automation"
@@ -112,27 +112,27 @@ export const t = {
     methodology: {
       tag: "03 · Strategic Approach",
       title: "How I approach complex decisions.",
-      subtitle: "A structured four-step framework connecting raw operational reality to boardroom strategy.",
+      subtitle: "A structured four-step framework connecting daily operational data to boardroom strategy.",
       steps: [
         {
           step: "01",
           title: "Commercial Diagnosis",
-          desc: "Look past surface metrics to identify the real drivers of margin leakage, sales friction, or regional bottlenecks."
+          desc: "Look past surface metrics to find the real drivers of margin loss, sales friction, or operational bottlenecks."
         },
         {
           step: "02",
           title: "Strategic Modeling",
-          desc: "Translate business questions into clear pricing, unit-economics, or demand models that show trade-offs in plain terms."
+          desc: "Turn business questions into clear pricing, margin, and demand models that show trade-offs in plain terms."
         },
         {
           step: "03",
           title: "System Alignment",
-          desc: "Connect reporting, store systems, and automated data flows so the strategy works reliably in daily operations."
+          desc: "Connect reporting, store platforms, and automated data flows so the strategy works reliably every day."
         },
         {
           step: "04",
           title: "Leadership Clarity",
-          desc: "Deliver clean decision views and playbooks that empower executives and teams to act quickly and independently."
+          desc: "Deliver clean decision views and playbooks that help executives and teams act quickly and independently."
         }
       ]
     },
@@ -151,13 +151,13 @@ export const t = {
           index: "02",
           title: "Executive Decision Intelligence",
           tools: "Power BI · DAX · Executive Cockpits · Cohort & P&L Modeling",
-          summary: "Translating complex operational and financial datasets into clear leadership views."
+          summary: "Turning complex operational and financial datasets into clear leadership views."
         },
         {
           index: "03",
-          title: "Multi-Region E-Commerce",
-          tools: "Cross-Border Scaling · Marketplace Strategy · Demand Planning · Shopware",
-          summary: "Scaling online retail operations and catalog governance across European markets."
+          title: "E-Commerce & Market Expansion",
+          tools: "Multi-Region Scaling · Marketplace Strategy · Demand Planning · Shopware",
+          summary: "Growing digital retail channels and managing catalogs across multiple regions."
         },
         {
           index: "04",
@@ -175,7 +175,7 @@ export const t = {
       directEmail: "chandra572gourav@proton.me",
       copyEmail: "Copy Address",
       copied: "Copied",
-      responseTime: "Personal portfolio & professional networking · Essen, Germany (EU)",
+      responseTime: "Personal portfolio & professional networking · Essen, Germany",
       nonCommercialNote: "This site is a personal professional portfolio for networking and knowledge exchange—no commercial services are sold here.",
       form: {
         nameLabel: "Name",
@@ -185,7 +185,7 @@ export const t = {
         serviceLabel: "Discussion Topic",
         serviceOptions: [
           "Pricing Optimization & Margin Strategy",
-          "E-Commerce Sales & Multi-Region Scaling",
+          "E-Commerce Sales & Multi-Region Growth",
           "Executive Decision Intelligence & Power BI",
           "Professional Networking & Peer Exchange"
         ],
@@ -221,7 +221,7 @@ export const t = {
           },
           {
             heading: "4. Hosting & Security",
-            body: "This static site is hosted via GitHub Pages and routed through vizjourney.com over encrypted HTTPS connections. Standard technical server logs (such as IP addresses transiently processed by the hosting provider to deliver the webpage) are governed by GitHub's EU privacy commitments."
+            body: "This static site is hosted via GitHub Pages and routed through vizjourney.com over encrypted HTTPS connections. Standard technical server logs (such as IP addresses transiently processed by the hosting provider to deliver the webpage) are governed by GitHub's privacy commitments."
           }
         ]
       }
@@ -234,26 +234,26 @@ export const t = {
       process: "Ansatz",
       techStack: "Methodik",
       contact: "Austausch",
-      letsTalk: "Vernetzten",
+      letsTalk: "Vernetzen",
     },
     hero: {
-      role: "Gourav Chandra · Commercial, Pricing & Data Strategist · Deutschland (EU)",
+      role: "Gourav Chandra · Commercial, Pricing & Data Strategist · Deutschland",
       title1: "Die Verbindung von",
       title2: "Daten & Strategie.",
-      subtitle: "Unterstützung für Führungskräfte und Entscheider, um komplexe Marktdaten in klare kaufmännische Entscheidungen zu übersetzen. Fokus auf Preisoptimierung, E-Commerce-Vertriebsstrategie, internationale Skalierung und Decision Intelligence.",
+      subtitle: "Unterstützung für Führungskräfte und Entscheider, um komplexe Marktdaten in klare kaufmännische Entscheidungen zu übersetzen – in den Bereichen Preisoptimierung, E-Commerce-Vertriebsstrategie, Multi-Region-Skalierung und Decision Intelligence.",
       explore: "Strategischer Fokus",
       letsTalk: "Fachlicher Austausch",
       quickFacts: [
-        { label: "Kernfokus", value: "Pricing & Vertriebsstrategie" },
-        { label: "Wachstum", value: "Multi-Region Skalierung" },
-        { label: "Decision Intelligence", value: "Power BI & Handelsmodelle" },
-        { label: "Marktraum", value: "DACH & Europa" }
+        { label: "Strategie", value: "Pricing & Margensteuerung" },
+        { label: "Handel", value: "E-Commerce & Kanalwachstum" },
+        { label: "Analytics", value: "Power BI & Entscheidungsmodelle" },
+        { label: "Märkte", value: "Multi-Region Steuerung" }
       ]
     },
     consulting: {
       tag: "01 · Strategische Schwerpunkte",
       title: "Wo Daten auf kaufmännische Führung treffen.",
-      subtitle: "Klare Entscheidungsmodelle für Führungskräfte, um Margen zu sichern, in neue Märkte zu wachsen und das Tagesgeschäft präzise zu steuern.",
+      subtitle: "Klare Entscheidungsmodelle für Führungskräfte, um Margen zu sichern, neue Märkte zu erschließen und das Tagesgeschäft präzise zu steuern.",
       filterAll: "Alle Säulen",
       inquireAction: "Fachaustausch starten",
       services: [
@@ -262,18 +262,18 @@ export const t = {
           number: "01",
           category: "Preisstrategie",
           title: "Preisoptimierung & Margensicherung",
-          summary: "Klare Preisarchitektur für Wettbewerbsfähigkeit und gesunde Deckungsbeiträge.",
+          summary: "Klare Preisstrukturen für Wettbewerbsfähigkeit und gesunde Deckungsbeiträge.",
           desc: "Entwicklung dynamischer Preismodelle, Elastizitätsanalysen und Marktbeobachtungen, damit Entscheider genau wissen, wann Preise gehalten oder gezielt angepasst werden sollten.",
-          deliverables: "Preiselastizität · Deckungsbeitragsmodelle · Kanal-Pricing · Rabattsteuerung"
+          deliverables: "Preiselastizität · Deckungsbeitragsmodelle · Kanal-Pricing · Rabattlogik"
         },
         {
           id: "growth",
           number: "02",
           category: "Vertrieb & Skalierung",
-          title: "E-Commerce-Vertriebsstrategie & Internationale Skalierung",
-          summary: "Strukturierte Expansion über europäische Märkte und digitale Vertriebskanäle.",
-          desc: "Abstimmung von Sortimentsstrategie, Länderausrichtung, Marktplatz-Mix und Unit Economics, um Marken profitabel in neuen europäischen Regionen zu skalieren.",
-          deliverables: "Länder-Rollout · Marktplatz-Strategie · Sortimentsplanung · Unit Economics"
+          title: "E-Commerce-Vertrieb & Multi-Region-Wachstum",
+          summary: "Strukturierte Expansion in neue Märkte und digitale Vertriebskanäle.",
+          desc: "Abstimmung von Sortimentsplanung, regionaler Preisgestaltung, Marktplatz-Mix und Unit Economics, um Marken profitabel über mehrere Regionen hinweg zu skalieren.",
+          deliverables: "Marktexpansion · Marktplatz-Strategie · Sortimentsplanung · Unit Economics"
         },
         {
           id: "bi",
@@ -282,7 +282,7 @@ export const t = {
           title: "Management-Entscheidungssysteme",
           summary: "Direkte Führungs-Cockpits statt zeitraubender Excel-Zusammenstellungen.",
           desc: "Verknüpfung von Umsatz, Retourenverhalten, Marketingbudget und Lagerreichweite in einem klaren Power-BI-Cockpit für schnelle, fundierte Management-Entscheidungen.",
-          deliverables: "Management-Cockpits · GuV-Transparenz · Retourenanalyse · Bedarfsprognose"
+          deliverables: "Management-Cockpits · GuV-Transparenz · Retourenanalyse · Bedarfsplanung"
         },
         {
           id: "operations",
@@ -291,7 +291,7 @@ export const t = {
           title: "Automatisierte Daten- & Handelsprozesse",
           summary: "Verlässliche Datenprozesse, die Strategieteams von manueller Routinearbeit entlasten.",
           desc: "Aufbau sauberer SQL- und Python-Strecken im Hintergrund, die ERP-, Shop- und Marktplatzdaten zusammenführen – für verlässliche Zahlen jeden Morgen.",
-          deliverables: "SQL- & Python-Pipelines · Sicherheitsbestände · Frühwarnsysteme · Systemintegration"
+          deliverables: "SQL- & Python-Pipelines · Sicherheitsbestände · Frühwarnsysteme · Systemabgleich"
         }
       ]
     },
@@ -308,7 +308,7 @@ export const t = {
           index: "01",
           category: "Preisoptimierung · Handelsstrategie",
           title: "Kanalübergreifendes Preis- & Deckungsbeitragsmodell",
-          overview: "Der parallele Verkauf über eigene Onlineshops und große europäische Marktplätze erzeugte hohen Preisdruck, während Gebühren, Versand und Retouren die wahre Nettomarge verschleierten.",
+          overview: "Der parallele Verkauf über eigene Onlineshops und Marktplätze erzeugte hohen Preisdruck, während Gebühren, Versand und Retouren die wahre Nettomarge verschleierten.",
           solution: "Aufbau eines einheitlichen Deckungsbeitragsmodells und einer automatisierten Preisbeobachtung, die Wettbewerbsänderungen, Retourenquoten und Kanalkosten vor jeder Preisanpassung einberechnet.",
           outcome: "Führungskräfte erhielten volle Transparenz über die Profitabilität auf Artikelebene und schützten ihre Kernmarge auch in intensiven Aktionswochen.",
           stack: "Pricing-Strategie · Margenmodelle · Python · Power BI"
@@ -316,12 +316,12 @@ export const t = {
         {
           id: "multiregion-ecommerce-scaling",
           index: "02",
-          category: "Internationale Skalierung · E-Commerce",
-          title: "Europäische Cross-Border E-Commerce-Expansion",
-          overview: "Ein wachsendes Handelsunternehmen wollte über den Heimatmarkt hinaus in mehrere europäische Länder expandieren – mit jeweils eigener Nachfrage, Steuerlogik und Kostenstruktur.",
-          solution: "Entwicklung einer gestuften Markt- und Vertriebsstrategie mit regionaler Sortimentsauswahl, lokaler Preisstaffelung sowie zentraler Katalog- und Bestandssteuerung.",
-          outcome: "Die Geschäftsleitung steuerte neue Ländermärkte nach einem klaren kaufmännischen Leitfaden und skalierte den Auslandsumsatz ohne operative Reibungsverluste.",
-          stack: "Marktexpansion · Vertriebsstrategie · Multi-Region Katalog · ERP & Shopware"
+          category: "Marktexpansion · E-Commerce-Strategie",
+          title: "Multi-Region E-Commerce-Expansion",
+          overview: "Ein wachsendes Handelsunternehmen wollte über den Heimatmarkt hinaus in mehrere neue Regionen expandieren – mit jeweils eigener Nachfrage, Währungs- und Steuerlogik sowie Kostenstruktur.",
+          solution: "Entwicklung einer gestuften Markt- und Vertriebsstrategie mit regionaler Sortimentsauswahl, lokaler Preisstaffelung sowie zentraler Katalog- und Bestandsplanung.",
+          outcome: "Die Geschäftsleitung steuerte neue regionale Vertriebskanäle nach einem klaren kaufmännischen Leitfaden und baute den Umsatz über mehrere Märkte ohne operative Engpässe aus.",
+          stack: "Vertriebsstrategie · Markt-Rollout · Sortimentsplanung · ERP & Shopware"
         },
         {
           id: "executive-decision-cockpit",
@@ -343,12 +343,12 @@ export const t = {
         {
           step: "01",
           title: "Kaufmännische Diagnose",
-          desc: "Blick hinter oberflächliche Kennzahlen, um echte Margentreiber, Wachstumsbremsen oder regionale Engpässe zu erkennen."
+          desc: "Blick hinter oberflächliche Kennzahlen, um echte Margentreiber, Wachstumsbremsen oder operative Engpässe zu erkennen."
         },
         {
           step: "02",
           title: "Strategisches Modell",
-          desc: "Übersetzung von Geschäftsfragen in klare Preis-, Deckungsbeitrags- oder Bedarfsmodelle mit transparenten Handlungsoptionen."
+          desc: "Übersetzung von Geschäftsfragen in klare Preis-, Margen- und Bedarfsmodelle mit transparenten Handlungsoptionen."
         },
         {
           step: "03",
@@ -381,9 +381,9 @@ export const t = {
         },
         {
           index: "03",
-          title: "Multi-Region E-Commerce",
-          tools: "Cross-Border-Skalierung · Marktplatz-Strategie · Bedarfsplanung · Shopware",
-          summary: "Skalierung digitaler Vertriebskanäle und Katalogprozesse über europäische Märkte hinweg."
+          title: "E-Commerce & Marktexpansion",
+          tools: "Multi-Region-Skalierung · Marktplatz-Strategie · Bedarfsplanung · Shopware",
+          summary: "Skalierung digitaler Vertriebskanäle und Katalogprozesse über mehrere Regionen hinweg."
         },
         {
           index: "04",
@@ -396,12 +396,12 @@ export const t = {
     contact: {
       tag: "05 · Fachlicher Austausch",
       title: "Vernetzen & Perspektiven teilen.",
-      subtitle: "Interesse an einem fachlichen Austausch zu Preisstrategie, internationaler E-Commerce-Skalierung oder Decision Intelligence? Ich freue mich über den Dialog mit Führungskräften und Fachkollegen.",
+      subtitle: "Interesse an einem fachlichen Austausch zu Preisstrategie, Multi-Region E-Commerce oder Decision Intelligence? Ich freue mich über den Dialog mit Führungskräften und Fachkollegen.",
       directEmailTitle: "Direkter Kontakt",
       directEmail: "chandra572gourav@proton.me",
       copyEmail: "Adresse kopieren",
       copied: "Kopiert",
-      responseTime: "Persönliches Portfolio & Fachnetzwerk · Essen, Deutschland (EU)",
+      responseTime: "Persönliches Portfolio & Fachnetzwerk · Essen, Deutschland",
       nonCommercialNote: "Diese Seite dient ausschließlich dem persönlichen Fachaustausch und als berufliches Portfolio – kein gewerbliches Dienstleistungsangebot.",
       form: {
         nameLabel: "Name",
@@ -411,7 +411,7 @@ export const t = {
         serviceLabel: "Gesprächsthema",
         serviceOptions: [
           "Preisoptimierung & Margenstrategie",
-          "E-Commerce-Vertrieb & Multi-Region-Skalierung",
+          "E-Commerce-Vertrieb & Multi-Region-Wachstum",
           "Executive Decision Intelligence & Power BI",
           "Fachlicher Austausch & Networking"
         ],
@@ -447,7 +447,7 @@ export const t = {
           },
           {
             heading: "4. Hosting & Sicherheit",
-            body: "Diese statische Seite wird über GitHub Pages bereitgestellt und verschlüsselt (HTTPS) unter vizjourney.com ausgeliefert. Technisch notwendige Verbindungsdaten beim Seitenaufruf unterliegen den europäischen Datenschutzrichtlinien von GitHub."
+            body: "Diese statische Seite wird über GitHub Pages bereitgestellt und verschlüsselt (HTTPS) unter vizjourney.com ausgeliefert. Technisch notwendige Verbindungsdaten beim Seitenaufruf unterliegen den Datenschutzrichtlinien von GitHub."
           }
         ]
       }
