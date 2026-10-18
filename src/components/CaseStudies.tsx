@@ -17,7 +17,7 @@ export function CaseStudies({ lang }: CaseStudiesProps) {
             {content.caseStudies.tag}
           </div>
           <h2
-            className="font-display text-3xl sm:text-4xl font-semibold text-slate-900 dark:text-slate-50 tracking-tight mb-3"
+            className="font-display text-3xl sm:text-4xl font-semibold text-slate-900 dark:text-slate-50 tracking-tight mb-2"
             style={{ textWrap: 'balance' }}
           >
             {content.caseStudies.title}
@@ -27,57 +27,44 @@ export function CaseStudies({ lang }: CaseStudiesProps) {
           </p>
         </div>
 
-        {/* Clean Story-Driven Case Studies (No Stats, Unboxed Metadata) */}
-        <div className="space-y-6">
+        {/* Minimal 3-Column Executive Case Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {content.caseStudies.projects.map((project, idx) => (
             <motion.article
               key={project.id}
               id={`case-study-${project.id}`}
-              initial={{ opacity: 0, y: 14 }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.3, delay: idx * 0.05 }}
-              className="liquid-glass rounded-3xl p-7 sm:p-10"
+              transition={{ duration: 0.25, delay: idx * 0.05 }}
+              className="liquid-glass rounded-3xl p-6 sm:p-7 flex flex-col justify-between"
             >
-              {/* Top Kicker & Stack Metadata (Unboxed with middle-dot separators) */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-5 mb-6 border-b border-slate-200/70 dark:border-slate-800/80 text-xs font-mono text-slate-500 dark:text-slate-400">
-                <span>
+              <div>
+                <div className="text-xs font-mono text-slate-500 dark:text-slate-400 mb-3">
                   {project.index} · {project.category}
-                </span>
-                <span>{project.stack}</span>
+                </div>
+
+                <h3 className="font-display text-lg sm:text-xl font-semibold text-slate-900 dark:text-slate-50 tracking-tight mb-3">
+                  {project.title}
+                </h3>
+
+                <p className="font-sans text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-5">
+                  {project.summary}
+                </p>
               </div>
 
-              <h3 className="font-display text-2xl sm:text-3xl font-semibold text-slate-900 dark:text-slate-50 tracking-tight mb-8">
-                {project.title}
-              </h3>
-
-              {/* 3-Column Plain-English Narrative (Challenge -> Action -> Result) */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="pt-4 border-t border-slate-200/70 dark:border-slate-800/80 space-y-3">
                 <div>
-                  <div className="font-mono text-xs text-slate-500 dark:text-slate-400 mb-2">
-                    01 / {content.caseStudies.challengeLabel}
-                  </div>
-                  <p className="font-sans text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                    {project.overview}
-                  </p>
-                </div>
-
-                <div>
-                  <div className="font-mono text-xs text-slate-500 dark:text-slate-400 mb-2">
-                    02 / {content.caseStudies.solutionLabel}
-                  </div>
-                  <p className="font-sans text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                    {project.solution}
-                  </p>
-                </div>
-
-                <div>
-                  <div className="font-mono text-xs text-slate-500 dark:text-slate-400 mb-2">
-                    03 / {content.caseStudies.resultLabel}
-                  </div>
-                  <p className="font-sans text-sm font-medium text-slate-800 dark:text-slate-100 leading-relaxed">
+                  <span className="font-mono text-[11px] uppercase tracking-wider text-slate-400 dark:text-slate-500 block mb-1">
+                    {content.caseStudies.outcomeLabel}
+                  </span>
+                  <p className="font-sans text-xs sm:text-sm font-medium text-slate-800 dark:text-slate-200 leading-snug">
                     {project.outcome}
                   </p>
+                </div>
+
+                <div className="text-[11px] font-mono text-slate-500 dark:text-slate-400 pt-2">
+                  {project.stack}
                 </div>
               </div>
             </motion.article>

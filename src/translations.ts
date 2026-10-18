@@ -27,7 +27,7 @@ export const t = {
     consulting: {
       tag: "01 · Strategic Focus",
       title: "Where data meets commercial leadership.",
-      subtitle: "Practical frameworks built for decision-makers to protect margins, enter new markets, and steer daily business performance with clarity.",
+      subtitle: "Core areas where structured analytics and commercial strategy drive profitable decisions.",
       filterAll: "All Pillars",
       inquireAction: "Exchange perspective",
       services: [
@@ -36,110 +36,101 @@ export const t = {
           number: "01",
           category: "Pricing Strategy",
           title: "Pricing Optimization & Margin Protection",
-          summary: "Clear pricing structures that balance market competitiveness with healthy contribution margins.",
-          desc: "Designing dynamic pricing models, elasticity checks, and competitor tracking routines so commercial leaders know exactly when to hold price and when to promote across channels.",
-          deliverables: "Price Elasticity · Contribution Margin Models · Channel Pricing · Discount Rules"
+          summary: "Dynamic pricing and contribution margin models that protect profitability across channels.",
+          deliverables: "Price Elasticity · Margin Models · Channel Pricing"
         },
         {
           id: "growth",
           number: "02",
           category: "Sales & Scaling",
           title: "E-Commerce Sales & Multi-Region Growth",
-          summary: "Structured commercial expansion across new markets and digital sales channels.",
-          desc: "Aligning assortment planning, local pricing, marketplace mix, and unit economics so brands can enter new regions and grow revenue profitably.",
-          deliverables: "Market Expansion · Marketplace Strategy · Assortment Planning · Unit Economics"
+          summary: "Commercial playbooks for entering new regions, aligning assortments, and scaling marketplaces.",
+          deliverables: "Market Expansion · Marketplace Mix · Unit Economics"
         },
         {
           id: "bi",
           number: "03",
           category: "Decision Intelligence",
           title: "Executive Decision Systems",
-          summary: "Direct, automated leadership views instead of scattered weekly spreadsheets.",
-          desc: "Connecting revenue, return behavior, marketing spend, and stock health into one clear Power BI cockpit so executives can make fast, confident resource decisions.",
-          deliverables: "Executive Cockpits · P&L Visibility · Cohort & Return Analysis · Demand Planning"
+          summary: "Unified Power BI cockpits giving leadership a single daily view of revenue, stock, and P&L.",
+          deliverables: "Executive Cockpits · P&L Visibility · Demand Planning"
         },
         {
           id: "operations",
           number: "04",
           category: "Commercial Ops",
           title: "Automated Commercial Workflows",
-          summary: "Reliable data foundations that free commercial teams from manual reporting.",
-          desc: "Building clean SQL and Python pipelines behind the scenes to unify ERP, store, and marketplace data—giving strategy and buying teams accurate numbers every morning.",
-          deliverables: "SQL & Python Pipelines · Stock Buffers · Automated Alerts · System Sync"
+          summary: "Clean SQL and Python data pipelines that eliminate manual reporting across systems.",
+          deliverables: "SQL & Python · Stock Buffers · System Sync"
         }
       ]
     },
     caseStudies: {
       tag: "02 · Selected Case Work",
       title: "Strategic execution in practice.",
-      subtitle: "How structured data and commercial strategy solve real leadership challenges.",
-      challengeLabel: "Context",
-      solutionLabel: "Strategic Approach",
-      resultLabel: "Business Impact",
+      subtitle: "Selected initiatives across pricing strategy, regional expansion, and executive reporting.",
+      outcomeLabel: "Impact",
       projects: [
         {
           id: "pricing-margin-strategy",
           index: "01",
-          category: "Pricing Optimization · Commercial Strategy",
-          title: "Multi-Channel Pricing & Contribution Margin Framework",
-          overview: "Selling across direct online stores and marketplaces created constant price pressure, making it hard for leadership to see true net margins after platform fees, shipping, and returns.",
-          solution: "Built a unified contribution margin model and automated price-positioning tracker that factors in competitor shifts, return rates, and channel costs before recommending price changes.",
-          outcome: "Decision-makers gained clear visibility into product-level profitability, protecting core margins while staying competitive during peak sales campaigns.",
+          category: "Pricing Strategy",
+          title: "Multi-Channel Pricing & Margin Framework",
+          summary: "Unified contribution margin and competitor-tracking model across direct stores and marketplaces.",
+          outcome: "Full visibility into product-level net margins and disciplined promotional pricing.",
           stack: "Pricing Strategy · Margin Modeling · Python · Power BI"
         },
         {
           id: "multiregion-ecommerce-scaling",
           index: "02",
-          category: "Market Expansion · E-Commerce Strategy",
+          category: "Market Expansion",
           title: "Multi-Region E-Commerce Expansion",
-          overview: "A growing retail business wanted to expand beyond its home market into several new regions, each with different customer demand, tax and currency rules, and fulfillment costs.",
-          solution: "Designed a phased market-entry and sales strategy covering local assortment selection, regional pricing tiers, and unified catalog and inventory planning.",
-          outcome: "Leadership launched and steered new regional sales channels from a single commercial playbook, growing revenue across markets without operational bottlenecks.",
-          stack: "Sales Strategy · Market Rollout · Assortment Planning · ERP & Shopware"
+          summary: "Commercial rollout framework aligning regional pricing tiers, local assortments, and inventory.",
+          outcome: "Scalable multi-market revenue growth steered from a single commercial playbook.",
+          stack: "Sales Strategy · Market Rollout · Assortment Planning"
         },
         {
           id: "executive-decision-cockpit",
           index: "03",
-          category: "Decision Intelligence · Executive Reporting",
+          category: "Decision Intelligence",
           title: "Automated Executive Sales & Inventory Cockpit",
-          overview: "Senior management waited days every week for teams to manually merge sales exports, warehouse stock sheets, and finance numbers before making purchasing or budget decisions.",
-          solution: "Created automated overnight data pipelines in SQL and Python feeding directly into an executive Power BI cockpit focused on daily revenue, net margin, stock cover, and return drivers.",
-          outcome: "Executives now open a single view each morning to spot demand shifts early, prevent stockouts on key lines, and allocate capital with confidence.",
-          stack: "Power BI · DAX · SQL · Python Automation"
+          summary: "Automated SQL, Python, and Power BI reporting replacing fragmented weekly spreadsheets.",
+          outcome: "Daily leadership clarity on demand shifts, stock cover, and capital allocation.",
+          stack: "Power BI · DAX · SQL · Python"
         }
       ]
     },
     methodology: {
       tag: "03 · Strategic Approach",
       title: "How I approach complex decisions.",
-      subtitle: "A structured four-step framework connecting daily operational data to boardroom strategy.",
+      subtitle: "Four steps from raw operational data to boardroom clarity.",
       steps: [
         {
           step: "01",
           title: "Commercial Diagnosis",
-          desc: "Look past surface metrics to find the real drivers of margin loss, sales friction, or operational bottlenecks."
+          desc: "Identify the real drivers behind margin loss, sales friction, or operational bottlenecks."
         },
         {
           step: "02",
           title: "Strategic Modeling",
-          desc: "Turn business questions into clear pricing, margin, and demand models that show trade-offs in plain terms."
+          desc: "Translate business questions into clear pricing, margin, and demand models."
         },
         {
           step: "03",
           title: "System Alignment",
-          desc: "Connect reporting, store platforms, and automated data flows so the strategy works reliably every day."
+          desc: "Connect reporting, commerce platforms, and automated data flows."
         },
         {
           step: "04",
           title: "Leadership Clarity",
-          desc: "Deliver clean decision views and playbooks that help executives and teams act quickly and independently."
+          desc: "Deliver concise decision views that let executives act quickly and independently."
         }
       ]
     },
     techStack: {
       tag: "04 · Core Toolkit",
       title: "Analytical & commercial stack.",
-      subtitle: "Methods and technologies used to turn raw business data into strategic clarity.",
+      subtitle: "Methods and tools used to turn business data into strategic clarity.",
       groups: [
         {
           index: "01",
@@ -151,19 +142,19 @@ export const t = {
           index: "02",
           title: "Executive Decision Intelligence",
           tools: "Power BI · DAX · Executive Cockpits · Cohort & P&L Modeling",
-          summary: "Turning complex operational and financial datasets into clear leadership views."
+          summary: "Turning operational and financial datasets into clear leadership views."
         },
         {
           index: "03",
           title: "E-Commerce & Market Expansion",
           tools: "Multi-Region Scaling · Marketplace Strategy · Demand Planning · Shopware",
-          summary: "Growing digital retail channels and managing catalogs across multiple regions."
+          summary: "Growing digital retail channels and assortments across regions."
         },
         {
           index: "04",
           title: "Data & Workflow Architecture",
           tools: "SQL · Python · Automated Data Pipelines · ERP & API Integration",
-          summary: "Building dependable data foundations that keep strategic models accurate every day."
+          summary: "Dependable data foundations that keep strategic models accurate every day."
         }
       ]
     },
@@ -253,119 +244,110 @@ export const t = {
     consulting: {
       tag: "01 · Strategische Schwerpunkte",
       title: "Wo Daten auf kaufmännische Führung treffen.",
-      subtitle: "Klare Entscheidungsmodelle für Führungskräfte, um Margen zu sichern, neue Märkte zu erschließen und das Tagesgeschäft präzise zu steuern.",
+      subtitle: "Kernbereiche, in denen strukturierte Analytik und Handelsstrategie profitable Entscheidungen ermöglichen.",
       filterAll: "Alle Säulen",
-      inquireAction: "Fachaustausch starten",
+      inquireAction: "Fachaustausch",
       services: [
         {
           id: "pricing",
           number: "01",
           category: "Preisstrategie",
           title: "Preisoptimierung & Margensicherung",
-          summary: "Klare Preisstrukturen für Wettbewerbsfähigkeit und gesunde Deckungsbeiträge.",
-          desc: "Entwicklung dynamischer Preismodelle, Elastizitätsanalysen und Marktbeobachtungen, damit Entscheider genau wissen, wann Preise gehalten oder gezielt angepasst werden sollten.",
-          deliverables: "Preiselastizität · Deckungsbeitragsmodelle · Kanal-Pricing · Rabattlogik"
+          summary: "Dynamische Preis- und Deckungsbeitragsmodelle, die Margen über alle Kanäle hinweg schützen.",
+          deliverables: "Preiselastizität · Margenmodelle · Kanal-Pricing"
         },
         {
           id: "growth",
           number: "02",
           category: "Vertrieb & Skalierung",
           title: "E-Commerce-Vertrieb & Multi-Region-Wachstum",
-          summary: "Strukturierte Expansion in neue Märkte und digitale Vertriebskanäle.",
-          desc: "Abstimmung von Sortimentsplanung, regionaler Preisgestaltung, Marktplatz-Mix und Unit Economics, um Marken profitabel über mehrere Regionen hinweg zu skalieren.",
-          deliverables: "Marktexpansion · Marktplatz-Strategie · Sortimentsplanung · Unit Economics"
+          summary: "Kaufmännische Leitfäden für neue Regionen, regionale Sortimente und Marktplatz-Skalierung.",
+          deliverables: "Marktexpansion · Marktplatz-Mix · Unit Economics"
         },
         {
           id: "bi",
           number: "03",
           category: "Decision Intelligence",
           title: "Management-Entscheidungssysteme",
-          summary: "Direkte Führungs-Cockpits statt zeitraubender Excel-Zusammenstellungen.",
-          desc: "Verknüpfung von Umsatz, Retourenverhalten, Marketingbudget und Lagerreichweite in einem klaren Power-BI-Cockpit für schnelle, fundierte Management-Entscheidungen.",
-          deliverables: "Management-Cockpits · GuV-Transparenz · Retourenanalyse · Bedarfsplanung"
+          summary: "Zentrale Power-BI-Cockpits für den täglichen Überblick über Umsatz, Bestand und GuV.",
+          deliverables: "Management-Cockpits · GuV-Transparenz · Bedarfsplanung"
         },
         {
           id: "operations",
           number: "04",
           category: "Commercial Ops",
           title: "Automatisierte Daten- & Handelsprozesse",
-          summary: "Verlässliche Datenprozesse, die Strategieteams von manueller Routinearbeit entlasten.",
-          desc: "Aufbau sauberer SQL- und Python-Strecken im Hintergrund, die ERP-, Shop- und Marktplatzdaten zusammenführen – für verlässliche Zahlen jeden Morgen.",
-          deliverables: "SQL- & Python-Pipelines · Sicherheitsbestände · Frühwarnsysteme · Systemabgleich"
+          summary: "Saubere SQL- und Python-Pipelines, die manuelles Reporting zwischen Systemen ablösen.",
+          deliverables: "SQL & Python · Sicherheitsbestände · Systemabgleich"
         }
       ]
     },
     caseStudies: {
       tag: "02 · Ausgewählte Fallbeispiele",
       title: "Strategische Umsetzung in der Praxis.",
-      subtitle: "Wie strukturierte Datenmodelle und klare Handelsstrategie reale Führungsfragen lösen.",
-      challengeLabel: "Ausgangslage",
-      solutionLabel: "Strategischer Ansatz",
-      resultLabel: "Wirkung",
+      subtitle: "Ausgewählte Initiativen aus Preisstrategie, Marktexpansion und Management-Reporting.",
+      outcomeLabel: "Wirkung",
       projects: [
         {
           id: "pricing-margin-strategy",
           index: "01",
-          category: "Preisoptimierung · Handelsstrategie",
-          title: "Kanalübergreifendes Preis- & Deckungsbeitragsmodell",
-          overview: "Der parallele Verkauf über eigene Onlineshops und Marktplätze erzeugte hohen Preisdruck, während Gebühren, Versand und Retouren die wahre Nettomarge verschleierten.",
-          solution: "Aufbau eines einheitlichen Deckungsbeitragsmodells und einer automatisierten Preisbeobachtung, die Wettbewerbsänderungen, Retourenquoten und Kanalkosten vor jeder Preisanpassung einberechnet.",
-          outcome: "Führungskräfte erhielten volle Transparenz über die Profitabilität auf Artikelebene und schützten ihre Kernmarge auch in intensiven Aktionswochen.",
+          category: "Preisstrategie",
+          title: "Kanalübergreifendes Preis- & Margenmodell",
+          summary: "Einheitliches Deckungsbeitrags- und Preisbeobachtungsmodell für Onlineshops und Marktplätze.",
+          outcome: "Volle Transparenz über Netto-Margen auf Artikelebene und gezielte Aktionssteuerung.",
           stack: "Pricing-Strategie · Margenmodelle · Python · Power BI"
         },
         {
           id: "multiregion-ecommerce-scaling",
           index: "02",
-          category: "Marktexpansion · E-Commerce-Strategie",
+          category: "Marktexpansion",
           title: "Multi-Region E-Commerce-Expansion",
-          overview: "Ein wachsendes Handelsunternehmen wollte über den Heimatmarkt hinaus in mehrere neue Regionen expandieren – mit jeweils eigener Nachfrage, Währungs- und Steuerlogik sowie Kostenstruktur.",
-          solution: "Entwicklung einer gestuften Markt- und Vertriebsstrategie mit regionaler Sortimentsauswahl, lokaler Preisstaffelung sowie zentraler Katalog- und Bestandsplanung.",
-          outcome: "Die Geschäftsleitung steuerte neue regionale Vertriebskanäle nach einem klaren kaufmännischen Leitfaden und baute den Umsatz über mehrere Märkte ohne operative Engpässe aus.",
-          stack: "Vertriebsstrategie · Markt-Rollout · Sortimentsplanung · ERP & Shopware"
+          summary: "Abgestimmte Markt- und Vertriebsstrategie für regionale Preisstaffeln, Sortimente und Bestände.",
+          outcome: "Skalierbares Umsatzwachstum über mehrere Märkte nach einem klaren kaufmännischen Leitfaden.",
+          stack: "Vertriebsstrategie · Markt-Rollout · Sortimentsplanung"
         },
         {
           id: "executive-decision-cockpit",
           index: "03",
-          category: "Decision Intelligence · Management-Reporting",
+          category: "Decision Intelligence",
           title: "Automatisiertes Management- & Bestands-Cockpit",
-          overview: "Entscheider warteten jede Woche tagelang darauf, dass Verkaufsdaten, Lagerlisten und Finanzzahlen manuell zusammengeführt wurden, bevor Einkaufs- oder Budgetentscheidungen fielen.",
-          solution: "Einrichtung automatisierter nächtlicher Datenstrecken in SQL und Python mit direkter Anbindung an ein Power-BI-Cockpit für Tagesumsatz, Nettomarge, Reichweite und Retourengründe.",
-          outcome: "Das Management erkennt Nachfrageverschiebungen nun jeden Morgen auf einen Blick, vermeidet Engpässe bei Kernartikeln und steuert Kapital gezielt.",
-          stack: "Power BI · DAX · SQL · Python-Automatisierung"
+          summary: "Automatisierte SQL-, Python- und Power-BI-Strecken anstelle manueller Wochenberichte.",
+          outcome: "Tägliche Entscheidungsklarheit über Nachfrage, Lagerreichweite und Kapitalallokation.",
+          stack: "Power BI · DAX · SQL · Python"
         }
       ]
     },
     methodology: {
       tag: "03 · Strategischer Ansatz",
       title: "Wie komplexe Entscheidungen klar werden.",
-      subtitle: "Ein strukturierter Vier-Schritte-Ansatz, der operative Daten mit klarer Unternehmensstrategie verbindet.",
+      subtitle: "In vier Schritten von operativen Rohdaten zu klarer Führungsstrategie.",
       steps: [
         {
           step: "01",
           title: "Kaufmännische Diagnose",
-          desc: "Blick hinter oberflächliche Kennzahlen, um echte Margentreiber, Wachstumsbremsen oder operative Engpässe zu erkennen."
+          desc: "Echte Margentreiber, Wachstumsbremsen und operative Engpässe identifizieren."
         },
         {
           step: "02",
           title: "Strategisches Modell",
-          desc: "Übersetzung von Geschäftsfragen in klare Preis-, Margen- und Bedarfsmodelle mit transparenten Handlungsoptionen."
+          desc: "Geschäftsfragen in klare Preis-, Margen- und Bedarfsmodelle übersetzen."
         },
         {
           step: "03",
           title: "System-Verankerung",
-          desc: "Verbindung von Reporting, Handelssystemen und automatisierten Datenflüssen, damit die Strategie im Alltag verlässlich greift."
+          desc: "Reporting, Handelssysteme und automatisierte Datenflüsse nahtlos verbinden."
         },
         {
           step: "04",
           title: "Entscheidungsklarheit",
-          desc: "Bereitstellung übersichtlicher Cockpits und Leitfäden, mit denen Führungskräfte schnell und eigenständig steuern."
+          desc: "Übersichtliche Cockpits bereitstellen, mit denen Führungskräfte schnell steuern."
         }
       ]
     },
     techStack: {
       tag: "04 · Methodik & Werkzeuge",
       title: "Analytisches & kaufmännisches Fundament.",
-      subtitle: "Methoden und Technologien, um aus Rohdaten belastbare strategische Entscheidungen zu formen.",
+      subtitle: "Methoden und Werkzeuge für belastbare strategische Entscheidungen.",
       groups: [
         {
           index: "01",
@@ -377,13 +359,13 @@ export const t = {
           index: "02",
           title: "Executive Decision Intelligence",
           tools: "Power BI · DAX · Management-Cockpits · Kohorten- & GuV-Modelle",
-          summary: "Übersetzung komplexer Betriebs- und Finanzdaten in klare Entscheidungsgrundlagen."
+          summary: "Übersetzung von Betriebs- und Finanzdaten in klare Entscheidungsgrundlagen."
         },
         {
           index: "03",
           title: "E-Commerce & Marktexpansion",
           tools: "Multi-Region-Skalierung · Marktplatz-Strategie · Bedarfsplanung · Shopware",
-          summary: "Skalierung digitaler Vertriebskanäle und Katalogprozesse über mehrere Regionen hinweg."
+          summary: "Skalierung digitaler Vertriebskanäle und Sortimente über mehrere Regionen."
         },
         {
           index: "04",

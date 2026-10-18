@@ -26,7 +26,7 @@ export function Consulting({ lang }: ConsultingProps) {
               {content.consulting.tag}
             </div>
             <h2
-              className="font-display text-3xl sm:text-4xl font-semibold text-slate-900 dark:text-slate-50 tracking-tight mb-3"
+              className="font-display text-3xl sm:text-4xl font-semibold text-slate-900 dark:text-slate-50 tracking-tight mb-2"
               style={{ textWrap: 'balance' }}
             >
               {content.consulting.title}
@@ -66,7 +66,7 @@ export function Consulting({ lang }: ConsultingProps) {
           </div>
         </div>
 
-        {/* Solutions Grid */}
+        {/* Concise Strategy Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <AnimatePresence mode="popLayout">
             {filteredServices.map((service) => (
@@ -78,40 +78,32 @@ export function Consulting({ lang }: ConsultingProps) {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.98 }}
                 transition={{ duration: 0.2 }}
-                className={`neo-glass-card rounded-3xl p-7 sm:p-8 flex flex-col justify-between ${
+                className={`neo-glass-card rounded-3xl p-6 sm:p-7 flex flex-col justify-between ${
                   filteredServices.length === 1 ? 'md:col-span-2' : ''
                 }`}
               >
                 <div>
-                  {/* Quiet unboxed metadata line */}
-                  <div className="flex items-center justify-between text-xs font-mono text-slate-500 dark:text-slate-400 mb-4">
-                    <span>
-                      {service.number} · {service.category}
-                    </span>
+                  <div className="text-xs font-mono text-slate-500 dark:text-slate-400 mb-3">
+                    {service.number} · {service.category}
                   </div>
 
-                  <h3 className="font-display text-xl sm:text-2xl font-semibold text-slate-900 dark:text-slate-50 tracking-tight mb-2">
+                  <h3 className="font-display text-xl font-semibold text-slate-900 dark:text-slate-50 tracking-tight mb-2">
                     {service.title}
                   </h3>
 
-                  <p className="font-sans text-sm font-medium text-slate-800 dark:text-slate-200 mb-3">
+                  <p className="font-sans text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-5">
                     {service.summary}
-                  </p>
-
-                  <p className="font-sans text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-                    {service.desc}
                   </p>
                 </div>
 
-                <div className="pt-5 border-t border-slate-200/70 dark:border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                  {/* Unboxed deliverables metadata with middle-dot separators */}
+                <div className="pt-4 border-t border-slate-200/70 dark:border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                   <span className="text-xs font-mono text-slate-500 dark:text-slate-400">
                     {service.deliverables}
                   </span>
 
                   <a
                     href="#contact"
-                    className="neo-btn px-3.5 py-2 rounded-xl inline-flex items-center gap-1.5 text-xs font-medium text-slate-800 dark:text-slate-200 whitespace-nowrap shrink-0 self-start sm:self-auto"
+                    className="neo-btn px-3 py-1.5 rounded-xl inline-flex items-center gap-1.5 text-xs font-medium text-slate-800 dark:text-slate-200 whitespace-nowrap shrink-0 self-start sm:self-auto"
                   >
                     <span>{content.consulting.inquireAction}</span>
                     <ArrowUpRight className="w-3.5 h-3.5 text-slate-500" />
